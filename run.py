@@ -452,7 +452,7 @@ figure. The shadow stops and catches him. While it's distracted, you make a \
 break for it.\n")
         pick_ups.remove("teddy")
         time.sleep(3)
-        # run_away()
+        run_away()
     elif "golf_club" in pick_ups:
         slowprint("The figure reaches for you. Impulsively, you swing the golf club \
 that is still in your hands. You miss and the shadow continues to advance...\n\
@@ -478,6 +478,39 @@ nothingness.\n\
 You never wake up again.\n\
 The end!\n")
     return
+
+
+def run_away():
+    """
+    User chooses to run away. If took stool out, can delay shadow
+    If has slippers on and stool out, can die unless has teddy
+    """
+    clear_terminal()
+    slowprint(f"You turn and run.\n\
+'{username},' the figure growls.\n")
+    if stool_out and "slippers" in pick_ups:
+        slowprint("You run through the kitchen and hop over the stool as you go. As \
+you leap, the bunny ears of your fluffy slippers catch on the stool and \
+you fall! You collapse on the kitchen tiles and the shadow looms over you.\n")
+        if "teddy" in pick_ups:
+            slowprint("In a panic, you throw Burt at the shadowy figure. It catches \
+him. As it seems to stare at Burt in confusion, you kick your slippers off \
+and run for the hallway.\n")
+            time.sleep(3)
+            # run_hallway()
+        else:
+            user_dies()
+    elif stool_out:
+        slowprint("You run through the kitchen, hopping over the stool as you go. The \
+figure follows, but as you reach the hallway, you glance back and see it \
+stumble over your step stool and fall on the kitchen tiles.\n")
+        time.sleep(3)
+        global shadow_delayed
+        if not shadow_delayed:
+            shadow_delayed = True
+            # run_hallway()
+    # elif not stool_out:
+        # run_hallway()
 
 
 main()
