@@ -682,7 +682,7 @@ C. Jump back into bed and pull the covers over your head.")
             run_window()
             break
         elif user_choice == "c":
-            # back_bed()
+            back_bed()
             break
         else:
             print(f"{user_choice} is not an option!\n")
@@ -717,7 +717,7 @@ You can hear the door slowly open behind you.\n\
 '{username},' the shadow softly growls.\n\
 You swing the club.\n")
             time.sleep(3)
-            # escape_house()
+            escape_house()
         else:
             slowprint("You run over to the window and try to slide it open. It's \
 jammed. Pushing with all your strength, you can't force it open.\n\
@@ -729,7 +729,7 @@ as you can in the corner of the room.\n")
         slowprint(f"You run over to the window. It's still open a crack. You slide \
 it open even wider as you hear your bedroom door slowly open behind you.\n\
 '{username},' the shadow softly growls.\n")
-        # escape_house()
+        escape_house()
 
 
 def escape_house():
@@ -744,6 +744,39 @@ Your grandparents live nearby. You go there every Sunday, it's not a very \
 long drive.\n\
 You think you know which way to go. It'll be safe there.\n\
 You start walking.\n\
+The end!\n")
+
+
+def back_bed():
+    """
+    Under covers. If have teddy, can win.
+    Otherwise, dies
+    """
+    clear_terminal()
+    slowprint("You dive into your bed and pull the covers up over your head. You \
+close your eyes and try as hard as you can to fall back to sleep.\n")
+    if "teddy" in pick_ups:
+        slowprint("You hug Burt close.\n")
+        time.sleep(3)
+        wake_win()
+    else:
+        slowprint("You can hear it. The bedroom creaks open. You lift the edge of \
+your blankets and peek out with one eye.\n")
+        time.sleep(3)
+        hidden_user_dies()
+
+
+def wake_win():
+    """
+    Happy ending!
+    """
+    slowprint(f"'{username}, why is there milk all over the kitchen floor?'\n\
+Your eyes open. Light seeps in around your blankets. You throw them back.\n\
+It's morning. Your bedroom is bright and empty. There's no shadowy figures \
+lurking in the corners.\n\
+It must have all been a terrible nightmare.\n\
+You're safe.\n\
+You look at Burt, still cradled in your arms.\n\
 The end!\n")
 
 
