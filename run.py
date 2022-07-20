@@ -497,7 +497,7 @@ you fall! You collapse on the kitchen tiles and the shadow looms over you.\n")
 him. As it seems to stare at Burt in confusion, you kick your slippers off \
 and run for the hallway.\n")
             time.sleep(3)
-            # run_hallway()
+            run_hallway()
         else:
             user_dies()
     elif stool_out:
@@ -508,9 +508,44 @@ stumble over your step stool and fall on the kitchen tiles.\n")
         global shadow_delayed
         if not shadow_delayed:
             shadow_delayed = True
-            # run_hallway()
-    # elif not stool_out:
-        # run_hallway()
+            run_hallway()
+    elif not stool_out:
+        run_hallway()
+
+
+def run_hallway():
+    """
+    Run to hallway. User has choice of four rooms. 2 could have been changed
+    by previous decisions. Time to escape effected by if shadow delayed
+    """
+    clear_terminal()
+    if not shadow_delayed:
+        slowprint("You reach the hallway, but the shadow is right on your heels. \
+There's little time.\n")
+    elif shadow_delayed:
+        slowprint("You reach the hallway before the shadowy figure can gather \
+itself.\n")
+    slowprint("You have to hide.\n")
+    while True:
+        user_choice = get_user_choice("You run to:\n\
+A. The master bedroom.\n\
+B. The closet.\n\
+C. Your bedroom.\n\
+D. The front door.")
+        if user_choice == "a":
+            # hide_master()
+            break
+        elif user_choice == "b":
+            # hide_closet()
+            break
+        elif user_choice == "c":
+            # hide_bedroom()
+            break
+        elif user_choice == "d":
+            # front_door()
+            break
+        else:
+            print(f"{user_choice} is REALLY not an option now!\n")
 
 
 main()
