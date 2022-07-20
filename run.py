@@ -82,7 +82,7 @@ You don't know why, but you feel wide awake and your heart is beating hard.\n")
 A. Get up and make a cup of tea.\n\
 B. Try to go back to sleep.")
         if user_choice == "a":
-            # get_up()
+            get_up()
             break
         elif user_choice == "b":
             try_sleep()
@@ -106,7 +106,7 @@ Very slowly, you peek out from under your covers. In the darkness, you spy the\
 A. Get up.\n\
 B. Pull the blanket tighter and close your eyes.\n")
         if user_choice == "a":
-            # get_up()
+            get_up()
             break
         elif user_choice == "b":
             blanket_tighter()
@@ -130,7 +130,7 @@ it's coming from, or even if you really heard it.\n")
 A. Investigate.\n\
 B. Sleep harder.\n")
         if user_choice == "a":
-            # get_up()
+            get_up()
             break
         elif user_choice == "b":
             sleep_harder()
@@ -188,7 +188,38 @@ B. Put on your fluffy slippers.\n")
         else:
             print(f"{user_choice} isn't really an option...\n")
 
-    # leave_bedroom()
+    leave_bedroom()
+
+
+def leave_bedroom():
+    """
+    Leave bedroom.
+    First line depends on choice in get_up function
+    Choice to investigate closet. Optional - user can ignore
+    """
+    clear_terminal()
+    if window_closed:
+        slowprint("You slide the window closed and shuffle out into the hallway \
+in your bare feet.\n")
+    else:
+        slowprint("You shiver and slip your slippers on, then shuffle out into \
+the hallway.\n")
+    slowprint("The house is still. You cannot hear a sound. You creep along the \
+hallway as quietly as you can. As you go, on your left you pass the hallway \
+closet.\n")
+    while True:
+        user_choice = input("You feel compelled to:\n\
+A. Check inside, though it is as quiet as the rest of the house.\n\
+B. Keep going - you don't need to encourage your imagination.\n\
+")
+        if user_choice == "a":
+            # check_closet()
+            break
+        elif user_choice == "b":
+            # continue_hallway()
+            break
+        else:
+            print(f"{user_choice} isn't really an option...\n")
 
 
 main()
