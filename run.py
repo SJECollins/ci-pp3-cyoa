@@ -326,13 +326,51 @@ hug yourself.\n")
 A. You can reach it if you stretch. \n\
 B. There's a stool here somewhere.")
         if user_choice == "a":
-            # try_reach()
+            try_reach()
             break
         elif user_choice == "b":
-            # get_stool()
+            get_stool()
             break
         else:
             print(f"{user_choice} isn't really an option...\n")
+
+
+def get_stool():
+    """
+    Optional function if user decides to get step stool
+    """
+    clear_terminal()
+    slowprint("You think you remember the stool by the backdoor. You walk past \
+the island in the middle of the kitchen, past the table and find the stool \
+next to the door, beside your wellies.\n\
+You glance at the door quickly as you retrieve the stool. It looks locked to \
+you. Of course it is.\n\
+You bring the stool back over to the counter and step up on it. You can \
+easily pull the kettle out from under the cabinet.\n")
+    global stool_out
+    stool_out = True
+    time.sleep(3)
+    # kettle_on()
+
+
+def try_reach():
+    """
+    Optional function if user decides to ignore step stool.
+    Will lose current item. Except slippers
+    """
+    clear_terminal()
+    slowprint("You think your arms are long enough. The counter is a little wide, \
+though.\n")
+    if "teddy" in pick_ups:
+        pick_ups.remove("teddy")
+        slowprint("So, you pop Burt on the counter to free your hands.\n")
+    elif "golf_club" in pick_ups:
+        pick_ups.remove("golf_club")
+        slowprint("So, you place the golf club down to free your hands.\n")
+    slowprint("On your toes, leaning on the counter with one hand, you reach out for \
+the kettle. You can just about pull it out from under the cabinet.\n")
+    time.sleep(3)
+    # kettle_on()
 
 
 main()
