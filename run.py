@@ -411,7 +411,7 @@ It seems to glide across the floor without taking a step.\n")
 A. Run.\n\
 B. Freeze.")
         if user_choice == "a":
-            # run_away()
+            run_away()
             break
         elif user_choice == "b":
             you_freeze()
@@ -435,7 +435,7 @@ B. Run.")
             kitchen_cry()
             break
         elif user_choice == "b":
-            # run_away()
+            run_away()
             break
         else:
             print(f"{user_choice} is REALLY not an option.\n")
@@ -533,13 +533,13 @@ B. The closet.\n\
 C. Your bedroom.\n\
 D. The front door.")
         if user_choice == "a":
-            # hide_master()
+            hide_master()
             break
         elif user_choice == "b":
             hide_closet()
             break
         elif user_choice == "c":
-            # hide_bedroom()
+            hide_bedroom()
             break
         elif user_choice == "d":
             front_door()
@@ -563,7 +563,7 @@ locked, out of reach.\n")
         slowprint("In a panic, you throw Burt at the shadowy figure. It catches \
 him. As it seems to stare at Burt in confusion, you run for your bedroom.\n")
         pick_ups.remove("teddy")
-        # hide_bedroom()
+        hide_bedroom()
     else:
         time.sleep(3)
         user_dies()
@@ -604,7 +604,7 @@ You think you can hear a sound coming from the kitchen.")
 A. Run to your bedroom.\n\
 B. Stay hidden.")
         if user_choice == "a":
-            # hide_bedroom()
+            hide_bedroom()
             break
         elif user_choice == "b":
             hidden_user_dies()
@@ -647,7 +647,7 @@ Why?\n")
 A. Run to your bedroom.\n\
 B. Run to the closet.")
             if user_choice == "a":
-                # hide_bedroom()
+                hide_bedroom()
                 break
             if user_choice == "b":
                 hide_closet()
@@ -658,6 +658,34 @@ B. Run to the closet.")
         slowprint("You almost reach the door, but the shadowy figure is right \
 behind you.\n")
         user_dies()
+
+
+def hide_bedroom():
+    """
+    Back to own room. 3 options to escape.
+    Under covers, with teddy, only happy ending.
+    Under bed, caught
+    Can go to window
+    """
+    clear_terminal()
+    slowprint("You race into your bedroom. As quickly and quietly as you can, \
+you close the door behind you. What now?\n")
+    while True:
+        user_choice = get_user_choice("You:\n\
+A. Slide under your bed.\n\
+B. Run to the window.\n\
+C. Jump back into bed and pull the covers over your head.")
+        if user_choice == "a":
+            # under_bed()
+            break
+        elif user_choice == "b":
+            # run_window()
+            break
+        elif user_choice == "c":
+            # back_bed()
+            break
+        else:
+            print(f"{user_choice} is not an option!\n")
 
 
 main()
