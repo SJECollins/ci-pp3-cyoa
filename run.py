@@ -19,8 +19,8 @@ def get_user_choice(message):
     """
     Function to take input from user
     """
-    user_choice = input("\n**--------------------------------------------------\
---------------------------**\n" + message + "\n").strip().lower()
+    user_choice = input("\n====================================================\
+============================\n" + message + "\n").strip().lower()
     return user_choice
 
 
@@ -45,9 +45,8 @@ def slowprint(text):
 def main():
     """
     Starting function. Updates username. Prompts user to begin story.
-    User can choose to say no, which prints a disappointed message and game \
+    User can choose to say no, which prints a disappointed message and game
     doesn't start
-
     """
     global username
     username = input("What's your name? \n").strip().capitalize()
