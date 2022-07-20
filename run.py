@@ -414,10 +414,31 @@ B. Freeze.")
             # run_away()
             break
         elif user_choice == "b":
-            # you_freeze()
+            you_freeze()
             break
         else:
             print(f"{user_choice} is not an option.\n")
+
+
+def you_freeze():
+    """
+    User chooses freeze. Has another chance do make a choice
+    """
+    clear_terminal()
+    slowprint(f"'{username},' the shadowy figure whispers.\n\
+How does it know your name?\n")
+    while True:
+        user_choice = get_user_choice("You:\n\
+A. Call for help.\n\
+B. Run.")
+        if user_choice == "a":
+            # kitchen_cry()
+            break
+        elif user_choice == "b":
+            # run_away()
+            break
+        else:
+            print(f"{user_choice} is REALLY not an option.\n")
 
 
 main()
