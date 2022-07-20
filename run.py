@@ -49,12 +49,11 @@ def main():
     doesn't start
 
     """
-    global username
     username = input("What's your name? \n").strip().capitalize()
-    start_answer = get_user_choice(f"\nHello, {username}, do you want to play a game?\
+    start_answer = get_user_choice(f"Hello, {username}, do you want to play a game?\
  Yes or No\n")
     if start_answer == "yes":
-        print("\nGreat. To play, enter the letter of your choice in the terminal\
+        print("Great. To play, enter the letter of your choice in the terminal\
 .")
         user_choice = get_user_choice("Ready to start?\n\
 A. Yes!\n\
@@ -85,7 +84,31 @@ B. Try to go back to sleep.")
             # get_up()
             break
         elif user_choice == "b":
-            # try_sleep()
+            try_sleep()
+            break
+        else:
+            print(f"{user_choice} isn't really an option...\n")
+
+
+def try_sleep():
+    """
+    Try to go back to sleep. Choice to get up or keep trying to sleep
+    """
+    clear_terminal()
+    slowprint("You have to get up for school early in the morning. So, you roll \
+over in your bed and pull the covers up over your head. After a few moments \
+of silence, you hear a soft rustling.\n\
+Very slowly, you peek out from under your covers. In the darkness, you spy the\
+ window open a crack. A light breeze is moving the curtains.\n")
+    while True:
+        user_choice = get_user_choice("It's chilly in your room, so you:\n\
+A. Get up.\n\
+B. Pull the blanket tighter and close your eyes.\n")
+        if user_choice == "a":
+            # get_up()
+            break
+        elif user_choice == "b":
+            # blanket_tighter()
             break
         else:
             print(f"{user_choice} isn't really an option...\n")
