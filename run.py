@@ -52,13 +52,13 @@ def main():
     global username
     username = input("What's your name? \n").strip().capitalize()
     start_answer = get_user_choice(f"Hello, {username}, do you want to play a game?\
- Yes or No\n")
+ Yes or No")
     if start_answer == "yes":
         print("Great. To play, enter the letter of your choice in the terminal\
 .")
         user_choice = get_user_choice("Ready to start?\n\
 A. Yes!\n\
-B. Actually, I don't think I want to play after all...\n")
+B. Actually, I don't think I want to play after all...")
         if user_choice == "a":
             clear_terminal()
             start_room()
@@ -104,7 +104,7 @@ Very slowly, you peek out from under your covers. In the darkness, you spy the\
     while True:
         user_choice = get_user_choice("It's chilly in your room, so you:\n\
 A. Get up.\n\
-B. Pull the blanket tighter and close your eyes.\n")
+B. Pull the blanket tighter and close your eyes.")
         if user_choice == "a":
             get_up()
             break
@@ -128,7 +128,7 @@ it's coming from, or even if you really heard it.\n")
     while True:
         user_choice = get_user_choice("You decide to:\n\
 A. Investigate.\n\
-B. Sleep harder.\n")
+B. Sleep harder.")
         if user_choice == "a":
             get_up()
             break
@@ -208,15 +208,46 @@ the hallway.\n")
 hallway as quietly as you can. As you go, on your left you pass the hallway \
 closet.\n")
     while True:
-        user_choice = input("You feel compelled to:\n\
+        user_choice = get_user_choice("You feel compelled to:\n\
 A. Check inside, though it is as quiet as the rest of the house.\n\
-B. Keep going - you don't need to encourage your imagination.\n\
-")
+B. Keep going - you don't need to encourage your imagination.")
         if user_choice == "a":
-            # check_closet()
+            check_closet()
             break
         elif user_choice == "b":
             # continue_hallway()
+            break
+        else:
+            print(f"{user_choice} isn't really an option...\n")
+
+
+def check_closet():
+    """
+    Optional. Can collect teddy or golf club.
+    User can also back out and pick up nothing
+    """
+    clear_terminal()
+    slowprint("For some reason, you decide to investigate the quiet closet. You \
+try to peek through the slats of the closet door, but see nothing except \
+darkness. Slowly, you open the closet and peer inside.\n\
+As expected, there is the regular assortment of clutter - coats, shoes, golf \
+clubs, your old teddy bear 'Burt'.\n")
+    while True:
+        user_choice = get_user_choice("You decide to:\n\
+A. Take Burt with you, you haven't spent much time together lately.\n\
+B. Take a golf club.\n\
+C. Take nothing. You don't know why you decided to open the closet in the \
+first place.")
+        if user_choice == "a":
+            pick_ups.append("teddy")
+            # after_closet()
+            break
+        elif user_choice == "b":
+            pick_ups.append("golf_club")
+            # after_closet()
+            break
+        elif user_choice == "c":
+            # after_closet()
             break
         else:
             print(f"{user_choice} isn't really an option...\n")
