@@ -133,10 +133,32 @@ B. Sleep harder.\n")
             # get_up()
             break
         elif user_choice == "b":
-            # sleep_harder()
+            sleep_harder()
             break
         else:
             print(f"{user_choice} isn't really an option...\n")
+
+
+def sleep_harder():
+    """
+    Sleep harder. First game end.
+    """
+    clear_terminal()
+    slowprint("You really do have to get up early and you've never been a very \
+inquisitive person. You pull the blanket tight around your ears and scrunch \
+your eyes even tighter. As you do, you feel a chill run up the back of your \
+neck and the blanket starts to feel very heavy...\n")
+    time.sleep(3)
+    slowprint(f"\n'{username}'\n\
+Who's saying that? You try to open your eyes and peek out from the covers, but\
+ your eyelids won't open and the covers are weighing you down...\n")
+    time.sleep(3)
+    slowprint("\nThe covers press harder and harder and your eyelids squeeze \
+tighter and tighter until all you feel is pressure and all you see is \
+nothingness.\n\
+You never wake up again.\n\
+The end!\n")
+    return
 
 
 main()
