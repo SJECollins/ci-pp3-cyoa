@@ -284,4 +284,55 @@ B. Investigate.")
             print(f"{user_choice} isn't really an option...\n")
 
 
+def check_bedroom():
+    """
+    Optional interaction. Leaves master bedroom door open.
+    """
+    clear_terminal()
+    slowprint("Very slowly, you creep across the hall to the door. You press your \
+ear up against it, but can hear nothing from inside. The door knob feels cool \
+on your hand.\n\
+Gingerly, you turn it. The door creaks as you push it open a crack. Peering \
+in, the room is so dark you can only see the outline of the duvet on the bed. \
+Nothing is stirring in the room. You cannot hear a sound.\n\
+Relieved, you leave the door open a crack and continue towards the kitchen.\n")
+    global door_open
+    if not door_open:
+        door_open = True
+    time.sleep(3)
+    go_kitchen()
+
+
+def go_kitchen():
+    """
+    In kitchen. Missable text depending on what items user has
+    Choice to use step stool or not
+    """
+    clear_terminal()
+    slowprint("You continue on towards the kitchen. It is as quiet as the rest \
+of the house. Moonlight filters in through the windows and illuminates the \
+room.\n")
+    if "slippers" not in pick_ups:
+        if "teddy" in pick_ups:
+            slowprint("The tiles feel like ice under your bare feet. You hug Burt \
+closely.\n")
+        else:
+            slowprint("The tiles feel like ice under your bare feet. You shiver and \
+hug yourself.\n")
+    slowprint("The kettle is tucked right in under the cabinets on the counter\
+.\n")
+    while True:
+        user_choice = get_user_choice("You think:\n\
+A. You can reach it if you stretch. \n\
+B. There's a stool here somewhere.")
+        if user_choice == "a":
+            # try_reach()
+            break
+        elif user_choice == "b":
+            # get_stool()
+            break
+        else:
+            print(f"{user_choice} isn't really an option...\n")
+
+
 main()
