@@ -432,13 +432,52 @@ How does it know your name?\n")
 A. Call for help.\n\
 B. Run.")
         if user_choice == "a":
-            # kitchen_cry()
+            kitchen_cry()
             break
         elif user_choice == "b":
             # run_away()
             break
         else:
             print(f"{user_choice} is REALLY not an option.\n")
+
+
+def kitchen_cry():
+    """
+    User calls for help. If has teddy, can survive. Else dies
+    """
+    clear_terminal()
+    if "teddy" in pick_ups:
+        slowprint("You open your mouth, but then in a panic you toss Burt at the \
+figure. The shadow stops and catches him. While it's distracted, you make a \
+break for it.\n")
+        pick_ups.remove("teddy")
+        time.sleep(3)
+        # run_away()
+    elif "golf_club" in pick_ups:
+        slowprint("The figure reaches for you. Impulsively, you swing the golf club \
+that is still in your hands. You miss and the shadow continues to advance...\n\
+")
+        time.sleep(3)
+    user_dies()
+
+
+def user_dies():
+    """
+    Reusable death end game
+    """
+    slowprint(f"You open your mouth to cry out for help, but your voice stops in \
+your throat.\n\
+'{username},' the figure groans.\n\
+It reaches for you.\n\
+Your legs quiver. Your feet refuse to listen to you. Your eyes widen but your \
+vision fades. You can feel a weight press down upon you...\n")
+    time.sleep(3)
+    slowprint(f"You are overcome with darkness. All you feel and see and hear is \
+nothingness.\n\
+'Goodnight, {username}.'\n\
+You never wake up again.\n\
+The end!\n")
+    return
 
 
 main()
