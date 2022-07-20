@@ -350,7 +350,7 @@ easily pull the kettle out from under the cabinet.\n")
     global stool_out
     stool_out = True
     time.sleep(3)
-    # kettle_on()
+    kettle_on()
 
 
 def try_reach():
@@ -370,7 +370,33 @@ though.\n")
     slowprint("On your toes, leaning on the counter with one hand, you reach out for \
 the kettle. You can just about pull it out from under the cabinet.\n")
     time.sleep(3)
-    # kettle_on()
+    kettle_on()
+
+
+def kettle_on():
+    """
+    Turn kettle on. No user interaction.
+    Missable text depending on if user got the stool
+    """
+    clear_terminal()
+    slowprint("You flick the switch on the kettle and the little light above it comes \
+on. It starts a low rumble. While the kettle boils, you collect your \
+ingredients.\n\
+Your favourite mug is sitting on the edge of the sink where you left it that \
+afternoon. You collect it.\n\
+The tea bags and sugar are much easier to reach than the kettle. You place a \
+tea bag in your mug. You take a spoon from the drawer and place it next to \
+your cup.\n")
+    time.sleep(3)
+    slowprint("You walk over to the fridge to get the milk. You open the door and \
+take out the milk carton. As the fridge door closes, you can see the back door\
+. It is slightly open.\n")
+    if stool_out:
+        slowprint("But, it was just closed?\n")
+    else:
+        slowprint("Was that open before?\n")
+    time.sleep(3)
+    # shadow_appears()
 
 
 main()
