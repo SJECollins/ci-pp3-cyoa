@@ -396,7 +396,28 @@ take out the milk carton. As the fridge door closes, you can see the back door\
     else:
         slowprint("Was that open before?\n")
     time.sleep(3)
-    # shadow_appears()
+    shadow_appears()
+
+
+def shadow_appears():
+    """
+    Monster. User can choose to run or do nothing
+    """
+    slowprint("As you watch, the back door slowly creaks open. A shadowy figure forms \
+before your. The hair stands up on the back of your neck as it approaches.\n\
+It seems to glide across the floor without taking a step.\n")
+    while True:
+        user_choice = get_user_choice("You:\n\
+A. Run.\n\
+B. Freeze.")
+        if user_choice == "a":
+            # run_away()
+            break
+        elif user_choice == "b":
+            # you_freeze()
+            break
+        else:
+            print(f"{user_choice} is not an option.\n")
 
 
 main()
