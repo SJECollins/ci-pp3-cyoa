@@ -732,4 +732,19 @@ it open even wider as you hear your bedroom door slowly open behind you.\n\
         # escape_house()
 
 
+def escape_house():
+    """
+    Ending - survives?
+    """
+    clear_terminal()
+    slowprint("You slip out your bedroom window and run out on to the footpath. \
+Looking back at your house, you think you see the shadow in your window.\n\
+It's quiet out. The road is still. There are no lights in any of the houses.\n\
+Your grandparents live nearby. You go there every Sunday, it's not a very \
+long drive.\n\
+You think you know which way to go. It'll be safe there.\n\
+You start walking.\n\
+The end!\n")
+
+
 main()
