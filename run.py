@@ -176,7 +176,7 @@ house. At the end of your bed are an oversized pair of fluffy bunny slippers.\
     while True:
         user_choice = get_user_choice("You shiver and:\n\
 A. Close the window.\n\
-B. Put on your fluffy slippers.\n")
+B. Put on your fluffy slippers.")
         if user_choice == "a":
             global window_closed
             if not window_closed:
