@@ -676,16 +676,60 @@ A. Slide under your bed.\n\
 B. Run to the window.\n\
 C. Jump back into bed and pull the covers over your head.")
         if user_choice == "a":
-            # under_bed()
+            under_bed()
             break
         elif user_choice == "b":
-            # run_window()
+            run_window()
             break
         elif user_choice == "c":
             # back_bed()
             break
         else:
             print(f"{user_choice} is not an option!\n")
+
+
+def under_bed():
+    """
+    Hiding under bed. Gets caught always
+    """
+    clear_terminal()
+    slowprint(f"You dive head first under your bed and curl yourself into as \
+small of a ball as you can.\n\
+You cover your mouth and try to quiet your breathing.\n\
+'{username}.'\n\
+The bedroom door creaks open slowly.\n")
+    time.sleep(3)
+    hidden_user_dies()
+
+
+def run_window():
+    """
+    If window still open or has golf club, can escape.
+    If window closed and no golf club, caught.
+    """
+    clear_terminal()
+    if window_closed:
+        if "golf_club" in pick_ups:
+            slowprint(f"You run over to the window and try to slide it open, but \
+it's jammed. You can't force it.\n\
+The golf club! You still have it!\n\
+You can hear the door slowly open behind you.\n\
+'{username},' the shadow softly growls.\n\
+You swing the club.\n")
+            time.sleep(3)
+            # escape_house()
+        else:
+            slowprint("You run over to the window and try to slide it open. It's \
+jammed. Pushing with all your strength, you can't force it open.\n\
+You turn as the bedroom door slowly opens and try to make yourself as small \
+as you can in the corner of the room.\n")
+            time.sleep(3)
+            user_dies()
+    elif not window_closed:
+        slowprint(f"You run over to the window. It's still open a crack. You slide \
+it open even wider as you hear your bedroom door slowly open behind you.\n\
+'{username},' the shadow softly growls.\n")
+        # escape_house()
 
 
 main()
