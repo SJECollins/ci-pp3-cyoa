@@ -536,13 +536,13 @@ D. The front door.")
             # hide_master()
             break
         elif user_choice == "b":
-            # hide_closet()
+            hide_closet()
             break
         elif user_choice == "c":
             # hide_bedroom()
             break
         elif user_choice == "d":
-            # front_door()
+            front_door()
             break
         else:
             print(f"{user_choice} is REALLY not an option now!\n")
@@ -621,6 +621,43 @@ def hidden_user_dies():
     slowprint("You stay frozen in fear where you are.\n\
 A cold chill runs up your spine and, suddenly, you see it before you.\n")
     user_dies()
+
+
+def hide_master():
+    """
+    Hide in master bedroom. If user previously interacted, door open.
+    If shadow delayed, can hide. If not delayed, caught.
+    If not interacted before, door closed. If shadow delayed, can go
+    elsewhere. If not delayed, caught
+    """
+    clear_terminal()
+    slowprint("The master bedroom is closest so you race for the door.\n")
+    if shadow_delayed and door_open:
+        slowprint("You slip through the open door.\n\
+Expecting safety, you realise the mound of blankets you saw earlier \
+is just that - blankets. The room is empty. You have no time to wonder \
+why, so you dive underneath the bed.\n")
+        time.sleep(3)
+        user_hides()
+    elif shadow_delayed and not door_open:
+        slowprint("You turn the doorknob, but the door won't open. It's locked? \
+Why?\n")
+        while True:
+            user_choice = get_user_choice("You turn around and:\n\
+A. Run to your bedroom.\n\
+B. Run to the closet.")
+            if user_choice == "a":
+                # hide_bedroom()
+                break
+            if user_choice == "b":
+                hide_closet()
+                break
+            else:
+                print(f"{user_choice} is REALLY not an option now!\n")
+    elif not shadow_delayed:
+        slowprint("You almost reach the door, but the shadowy figure is right \
+behind you.\n")
+        user_dies()
 
 
 main()
