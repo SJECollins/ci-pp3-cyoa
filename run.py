@@ -215,7 +215,7 @@ B. Keep going - you don't need to encourage your imagination.")
             check_closet()
             break
         elif user_choice == "b":
-            # continue_hallway()
+            continue_hallway()
             break
         else:
             print(f"{user_choice} isn't really an option...\n")
@@ -230,8 +230,8 @@ def check_closet():
     slowprint("For some reason, you decide to investigate the quiet closet. You \
 try to peek through the slats of the closet door, but see nothing except \
 darkness. Slowly, you open the closet and peer inside.\n\
-As expected, there is the regular assortment of clutter - coats, shoes, golf \
-clubs, your old teddy bear 'Burt'.\n")
+As expected, there is only the regular assortment of clutter - coats, shoes, \
+golf clubs, your old teddy bear 'Burt'.\n")
     while True:
         user_choice = get_user_choice("You decide to:\n\
 A. Take Burt with you, you haven't spent much time together lately.\n\
@@ -240,14 +240,45 @@ C. Take nothing. You don't know why you decided to open the closet in the \
 first place.")
         if user_choice == "a":
             pick_ups.append("teddy")
-            # after_closet()
+            continue_hallway()
             break
         elif user_choice == "b":
             pick_ups.append("golf_club")
-            # after_closet()
+            continue_hallway()
             break
         elif user_choice == "c":
-            # after_closet()
+            continue_hallway()
+            break
+        else:
+            print(f"{user_choice} isn't really an option...\n")
+
+
+def continue_hallway():
+    """
+    After bedroom or closet. User has option to check bedroom. Can ignore
+    """
+    clear_terminal()
+    if "teddy" in pick_ups:
+        slowprint("You take Burt down from the shelf in the closet and grip him \
+tightly in your arms.\n")
+    elif "golf_club" in pick_ups:
+        slowprint("You nod at Burt, but pull a long golf club from the bag in the \
+back of the closet. The metal feels cold in your hands.\n")
+    slowprint(f"You continue down the hallway and pass the master bedroom on your \
+right.\n\
+'{username}'\n\
+Who said that? You think it came from inside the door. It was so quiet, \
+though.\n\
+Maybe it was just your mind playing tricks on you?\n")
+    while True:
+        user_choice = get_user_choice("Will you:\n\
+A. Ignore it. It was just the wind.\n\
+B. Investigate.")
+        if user_choice == "a":
+            go_kitchen()
+            break
+        elif user_choice == "b":
+            check_bedroom()
             break
         else:
             print(f"{user_choice} isn't really an option...\n")
