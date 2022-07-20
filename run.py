@@ -548,4 +548,25 @@ D. The front door.")
             print(f"{user_choice} is REALLY not an option now!\n")
 
 
+def front_door():
+    """
+    Front door. User dies unless has teddy still.
+    If has teddy, runs to bedroom
+    """
+    clear_terminal()
+    slowprint(f"You race for the front door, hoping to escape from the house.\
+You pull on the handle. The door won't budge.\n\
+'{username},' whispers the shadowy figure as it approaches.\n\
+You fumble with the door and, too late, realise the bolt at the top is \
+locked, out of reach.\n")
+    if "teddy" in pick_ups:
+        slowprint("In a panic, you throw Burt at the shadowy figure. It catches \
+him. As it seems to stare at Burt in confusion, you run for your bedroom.\n")
+        pick_ups.remove("teddy")
+        # hide_bedroom()
+    else:
+        time.sleep(3)
+        user_dies()
+
+
 main()
