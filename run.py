@@ -569,4 +569,58 @@ him. As it seems to stare at Burt in confusion, you run for your bedroom.\n")
         user_dies()
 
 
+def hide_closet():
+    """
+    Hide in closet. User dies if shadow right behind, obviously.
+    """
+    clear_terminal()
+    slowprint("You race for the closet, diving through the slatted doors \
+and pulling them closed behind you. Hastily, you cover yourself in a \
+pile of winter coats. You put your hand to your mouth and try to stay \
+as quiet as you can.\n\
+All you can hear is your own breathing.\n")
+    if not shadow_delayed:
+        slowprint("Only seconds pass before the closet door slowly opens.\n")
+        time.sleep(3)
+        hidden_user_dies()
+    elif shadow_delayed:
+        time.sleep(3)
+        user_hides()
+
+
+def user_hides():
+    """
+    Reusable hiding for closet, master bedroom while shadow delayed
+    User always runs to own bedroom
+    """
+    slowprint("An eternity passes as you hide in the darkness. Is it still out \
+there?\n\
+You think you hear something pass by the door, but did you just imagine \
+that?\n\
+How much longer can you wait?\n\
+You think you can hear a sound coming from the kitchen.")
+    while True:
+        user_choice = get_user_choice("You decide to:\n\
+A. Run to your bedroom.\n\
+B. Stay hidden.")
+        if user_choice == "a":
+            # hide_bedroom()
+            break
+        elif user_choice == "b":
+            hidden_user_dies()
+            break
+        else:
+            print(f"{user_choice} is not an option!\n")
+
+
+def hidden_user_dies():
+    """
+    Reusable death end game when user hidden
+    Two lines added for variation, then calls user_dies function
+    """
+    slowprint("You stay frozen in fear where you are.\n\
+A cold chill runs up your spine and, suddenly, you see it before you.\n")
+    user_dies()
+
+
 main()
