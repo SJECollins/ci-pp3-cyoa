@@ -49,6 +49,7 @@ def main():
     doesn't start
 
     """
+    global username
     username = input("What's your name? \n").strip().capitalize()
     start_answer = get_user_choice(f"Hello, {username}, do you want to play a game?\
  Yes or No\n")
@@ -108,7 +109,31 @@ B. Pull the blanket tighter and close your eyes.\n")
             # get_up()
             break
         elif user_choice == "b":
-            # blanket_tighter()
+            blanket_tighter()
+            break
+        else:
+            print(f"{user_choice} isn't really an option...\n")
+
+
+def blanket_tighter():
+    """
+    Blankets tighter. Final chance to get up
+    """
+    clear_terminal()
+    slowprint(f"You pull the blanket back over your head and squeeze your eyes \
+shut.\n\
+'{username}'\n\
+You think you hear a voice softly calling your name. You're not sure where \
+it's coming from, or even if you really heard it.\n")
+    while True:
+        user_choice = get_user_choice("You decide to:\n\
+A. Investigate.\n\
+B. Sleep harder.\n")
+        if user_choice == "a":
+            # get_up()
+            break
+        elif user_choice == "b":
+            # sleep_harder()
             break
         else:
             print(f"{user_choice} isn't really an option...\n")
