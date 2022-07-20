@@ -161,4 +161,34 @@ The end!\n")
     return
 
 
+def get_up():
+    """
+    Get up.
+    Choice to close window or get slippers. Either changes window_closed
+    boolean or appends slippers to our pick_ups list.
+    Calls leave_bedroom function either way after user decision
+    """
+    clear_terminal()
+    slowprint("Maybe a cup of tea will help you drift off to sleep. You climb\
+ out of bed. The window is slightly open, letting a cold breeze into the \
+house. At the end of your bed are an oversized pair of fluffy bunny slippers.\
+\n")
+    while True:
+        user_choice = get_user_choice("You shiver and:\n\
+A. Close the window.\n\
+B. Put on your fluffy slippers.\n")
+        if user_choice == "a":
+            global window_closed
+            if not window_closed:
+                window_closed = True
+            break
+        elif user_choice == "b":
+            pick_ups.append("slippers")
+            break
+        else:
+            print(f"{user_choice} isn't really an option...\n")
+
+    # leave_bedroom()
+
+
 main()
