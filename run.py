@@ -4,6 +4,7 @@ Imports
 import os
 import sys
 import time
+import pyfiglet
 
 
 # Variables and objects
