@@ -174,14 +174,13 @@ house. At the end of your bed are an oversized pair of fluffy bunny slippers.\
 \n")
     while True:
         user_choice = get_user_choice("You shiver and:\n\
-A. Close the window.\n\
-B. Put on your fluffy slippers.")
-        if user_choice == "a":
+A. Close the \033[4mwindow\033[0m.\n\
+B. Put on your fluffy \033[4mslippers\033[0m.")
+        if user_choice == "a" or user_choice == "window":
             global window_closed
-            if not window_closed:
-                window_closed = True
+            window_closed = True
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "slippers":
             pick_ups.append("slippers")
             break
         else:
