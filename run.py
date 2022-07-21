@@ -49,6 +49,7 @@ def main():
     Start function.
     Displays the start screen. Prompts the user to press enter to begin.
     """
+    clear_terminal()
     title_text = "\nHide & Seek"
     game_title = pyfiglet.figlet_format(title_text, font="shadow",
                                         justify="center")
@@ -56,7 +57,7 @@ def main():
     subtitle_text = "A choose your own adventure game"
     subtitle = subtitle_text.center(80)
     slowprint(subtitle)
-    input("\n\n\nPress Enter to begin.")
+    input("\n\n\nPress Enter to begin")
     intro()
 
 
@@ -597,7 +598,7 @@ def front_door():
     print("\n".join(char.center(80) for char in
                     game_images["front"].splitlines()))
     slowprint(f"You race for the front door, hoping to escape from the house.\
-You pull on the handle. The door won't budge.\n\
+ You pull on the handle. The door won't budge.\n\
 '{username},' whispers the shadowy figure as it approaches.\n\
 You fumble with the door and, too late, realise the bolt at the top is \
 locked, out of reach.\n")
@@ -759,14 +760,14 @@ it's jammed. You can't force it.\n\
 The golf club! You still have it!\n\
 You can hear the door slowly open behind you.\n\
 '{username},' the shadow softly growls.\n\
-You swing the club.\n")
+You swing the club...\n")
             time.sleep(3)
             escape_house()
         else:
             slowprint("You run over to the window and try to slide it open. It's \
 jammed. Pushing with all your strength, you can't force it open.\n\
 You turn as the bedroom door slowly opens and try to make yourself as small \
-as you can in the corner of the room.\n")
+as you can in the corner of the room...\n")
             time.sleep(3)
             user_dies()
     elif not window_closed:
@@ -774,7 +775,7 @@ as you can in the corner of the room.\n")
                         game_images["window"].splitlines()))
         slowprint(f"You run over to the window. It's still open a crack. You slide \
 it open even wider as you hear your bedroom door slowly open behind you.\n\
-'{username},' the shadow softly growls.\n")
+'{username},' the shadow softly growls...\n")
         escape_house()
         play_again()
 
