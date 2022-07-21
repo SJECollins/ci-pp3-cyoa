@@ -526,20 +526,20 @@ itself.\n")
     slowprint("You have to hide.\n")
     while True:
         user_choice = get_user_choice("You run to:\n\
-A. The master bedroom.\n\
-B. The closet.\n\
-C. Your bedroom.\n\
-D. The front door.")
-        if user_choice == "a":
+A. The \033[4mmaster\033[0m bedroom.\n\
+B. The \033[4mcloset\033[0m.\n\
+C. Your \033[4mbedroom\033[0m.\n\
+D. The front \033[4mdoor\033[0m.")
+        if user_choice == "a" or user_choice == "master":
             hide_master()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "closet":
             hide_closet()
             break
-        elif user_choice == "c":
+        elif user_choice == "c" or user_choice == "bedroom":
             hide_bedroom()
             break
-        elif user_choice == "d":
+        elif user_choice == "d" or user_choice == "door":
             front_door()
             break
         else:
