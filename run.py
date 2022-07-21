@@ -807,13 +807,13 @@ def play_again():
     time.sleep(3)
     user_choice = get_user_choice(f"Well, {username}, would you like to try again?\n\
 A. \033[4mYes\033[0m! Let's play again!\n\
-B. No, I want to \033[4mquit\033[0m.")
+B. No, I want to \033[4mquit\033[0m to the title screen.")
     while True:
         if user_choice == "a" or user_choice == "yes":
             start_room()
             break
         elif user_choice == "b" or user_choice == "quit":
-            return
+            main()
         else:
             print(f"{user_choice} isn't an option")
 
