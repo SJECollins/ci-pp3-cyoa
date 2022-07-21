@@ -207,12 +207,12 @@ hallway as quietly as you can. As you go, on your left you pass the hallway \
 closet.\n")
     while True:
         user_choice = get_user_choice("You feel compelled to:\n\
-A. Check inside, though it is as quiet as the rest of the house.\n\
-B. Keep going - you don't need to encourage your imagination.")
-        if user_choice == "a":
+A. \033[4mCheck\033[0m inside, though it is as quiet as the rest of the house.\n\
+B. Keep \033[4mgoing\033[0m - you don't need to encourage your imagination.")
+        if user_choice == "a" or user_choice == "check":
             check_closet()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "going":
             continue_hallway()
             break
         else:
