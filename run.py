@@ -670,16 +670,16 @@ def hide_bedroom():
 you close the door behind you. What now?\n")
     while True:
         user_choice = get_user_choice("You:\n\
-A. Slide under your bed.\n\
-B. Run to the window.\n\
-C. Jump back into bed and pull the covers over your head.")
-        if user_choice == "a":
+A. \033[4mSlide\033[0m under your bed.\n\
+B. \033[4mRun\033[0m to the window.\n\
+C. \033[4mJump\033[0m back into bed and pull the covers over your head.")
+        if user_choice == "a" or user_choice == "slide":
             under_bed()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "run":
             run_window()
             break
-        elif user_choice == "c":
+        elif user_choice == "c" or user_choice == "jump":
             back_bed()
             break
         else:
