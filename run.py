@@ -322,12 +322,12 @@ hug yourself.\n")
 .\n")
     while True:
         user_choice = get_user_choice("You think:\n\
-A. You can reach it if you stretch. \n\
-B. There's a stool here somewhere.")
-        if user_choice == "a":
+A. You can \033[4mreach\033[0m it if you stretch. \n\
+B. There's a \033[4mstool\033[0m here somewhere.")
+        if user_choice == "a" or user_choice == "reach":
             try_reach()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "stool":
             get_stool()
             break
         else:
