@@ -444,7 +444,7 @@ def shadow_appears():
     print("\n".join(char.center(80) for char in
                     game_images["shadow"].splitlines()))
     slowprint("As you watch, the back door slowly creaks open. A shadowy figure forms \
-before your. The hair stands up on the back of your neck as it approaches.\n\
+before you. The hair stands up on the back of your neck as it approaches.\n\
 It seems to glide across the floor without taking a step.\n")
     while True:
         user_choice = get_user_choice("You:\n\
