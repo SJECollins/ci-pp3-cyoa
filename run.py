@@ -272,12 +272,12 @@ though.\n\
 Maybe it was just your mind playing tricks on you?\n")
     while True:
         user_choice = get_user_choice("Will you:\n\
-A. Ignore it. It was just the wind.\n\
-B. Investigate.")
-        if user_choice == "a":
+A. \033[4mIgnore\033[0m it. It was just the wind.\n\
+B. \033[4mInvestigate\033[0m.")
+        if user_choice == "a" or user_choice == "ignore":
             go_kitchen()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "investigate":
             check_bedroom()
             break
         else:
