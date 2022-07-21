@@ -91,6 +91,8 @@ def start_room():
     Starting room. Choice to get up or go back to sleep
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in 
+                    game_images["bed"].splitlines()))
     slowprint("You slowly open your eyes to find yourself safely in your own bed\
 . At first the room seems pitch black, except for the light from the clock on\
  your bedside table. It reads: 02:00.\n\
