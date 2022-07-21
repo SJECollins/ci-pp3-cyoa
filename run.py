@@ -642,12 +642,12 @@ why, so you dive underneath the bed.\n")
 Why?\n")
         while True:
             user_choice = get_user_choice("You turn around and:\n\
-A. Run to your bedroom.\n\
-B. Run to the closet.")
-            if user_choice == "a":
+A. Run to your \033[4mbedroom\033[0m.\n\
+B. Run to the \033[4mcloset\033[0m.")
+            if user_choice == "a" or user_choice == "bedroom":
                 hide_bedroom()
                 break
-            if user_choice == "b":
+            if user_choice == "b" or user_choice == "closet":
                 hide_closet()
                 break
             else:
