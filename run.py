@@ -428,12 +428,12 @@ def you_freeze():
 How does it know your name?\n")
     while True:
         user_choice = get_user_choice("You:\n\
-A. Call for help.\n\
-B. Run.")
-        if user_choice == "a":
+A. \033[4mCall\033[0m for help.\n\
+B. \033[4mRun\033[0m.")
+        if user_choice == "a" or user_choice == "call":
             kitchen_cry()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "run":
             run_away()
             break
         else:
