@@ -297,8 +297,7 @@ in, the room is so dark you can only see the outline of the duvet on the bed. \
 Nothing is stirring in the room. You cannot hear a sound.\n\
 Relieved, you leave the door open a crack and continue towards the kitchen.\n")
     global door_open
-    if not door_open:
-        door_open = True
+    door_open = True
     time.sleep(3)
     go_kitchen()
 
