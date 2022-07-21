@@ -5,6 +5,7 @@ import os
 import sys
 import time
 import pyfiglet
+from images import game_images
 
 
 # Variables and objects
