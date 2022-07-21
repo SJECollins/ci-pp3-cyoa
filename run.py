@@ -126,12 +126,12 @@ You think you hear a voice softly calling your name. You're not sure where \
 it's coming from, or even if you really heard it.\n")
     while True:
         user_choice = get_user_choice("You decide to:\n\
-A. Investigate.\n\
-B. Sleep harder.")
-        if user_choice == "a":
+A. \033[4mInvestigate\033[0m.\n\
+B. Sleep \033[4mharder\033[0m.")
+        if user_choice == "a" or user_choice == "investigate":
             get_up()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "harder":
             sleep_harder()
             break
         else:
