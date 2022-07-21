@@ -407,12 +407,12 @@ before your. The hair stands up on the back of your neck as it approaches.\n\
 It seems to glide across the floor without taking a step.\n")
     while True:
         user_choice = get_user_choice("You:\n\
-A. Run.\n\
-B. Freeze.")
-        if user_choice == "a":
+A. \033[4mRun\033[0m.\n\
+B. \033[4mFreeze\033[0m.")
+        if user_choice == "a" or user_choice == "run":
             run_away()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "freeze":
             you_freeze()
             break
         else:
