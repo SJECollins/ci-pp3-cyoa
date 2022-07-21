@@ -157,7 +157,7 @@ tighter and tighter until all you feel is pressure and all you see is \
 nothingness.\n\
 You never wake up again.\n\
 The end!\n")
-    return
+    play_again()
 
 
 def get_up():
@@ -476,7 +476,7 @@ nothingness.\n\
 'Goodnight, {username}.'\n\
 You never wake up again.\n\
 The end!\n")
-    return
+    play_again()
 
 
 def run_away():
@@ -729,6 +729,7 @@ as you can in the corner of the room.\n")
 it open even wider as you hear your bedroom door slowly open behind you.\n\
 '{username},' the shadow softly growls.\n")
         escape_house()
+        play_again()
 
 
 def escape_house():
@@ -744,6 +745,7 @@ long drive.\n\
 You think you know which way to go. It'll be safe there.\n\
 You start walking.\n\
 The end!\n")
+    play_again()
 
 
 def back_bed():
@@ -777,6 +779,23 @@ It must have all been a terrible nightmare.\n\
 You're safe.\n\
 You look at Burt, still cradled in your arms.\n\
 The end!\n")
+    play_again()
+
+
+def play_again():
+    """
+    Function at end of game to ask user if they want to play or quit
+    """
+    time.sleep(3)
+    user_choice = get_user_choice(f"Well, {username}, would you like to try again?\n\
+A. \033[4mYes\033[0m! Let's play again!\n\
+B. No, I want to \033[4mquit\033[0m.")
+    while True:
+        if user_choice == "a" or user_choice == "yes":
+            start_room()
+            break
+        elif user_choice == "b" or user_choice == "quit":
+            return
 
 
 main()
