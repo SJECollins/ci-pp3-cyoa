@@ -91,7 +91,7 @@ def start_room():
     Starting room. Choice to get up or go back to sleep
     """
     clear_terminal()
-    print("\n".join(char.center(80) for char in 
+    print("\n".join(char.center(80) for char in
                     game_images["bed"].splitlines()))
     slowprint("You slowly open your eyes to find yourself safely in your own bed\
 . At first the room seems pitch black, except for the light from the clock on\
@@ -218,9 +218,13 @@ def leave_bedroom():
     """
     clear_terminal()
     if window_closed:
+        print("\n".join(char.center(80) for char in
+                        game_images["window"].splitlines()))
         slowprint("You slide the window closed and shuffle out into the hallway \
 in your bare feet.\n")
     else:
+        print("\n".join(char.center(80) for char in
+                        game_images["slippers"].splitlines()))
         slowprint("You shiver and slip your slippers on, then shuffle out into \
 the hallway.\n")
     slowprint("The house is still. You cannot hear a sound. You creep along the \
@@ -247,6 +251,8 @@ def check_closet():
     User can also back out and pick up nothing
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in
+                    game_images["closet"].splitlines()))
     slowprint("For some reason, you decide to investigate the quiet closet. You \
 try to peek through the slats of the closet door, but see nothing except \
 darkness. Slowly, you open the closet and peer inside.\n\
@@ -280,9 +286,13 @@ def continue_hallway():
     """
     clear_terminal()
     if "teddy" in pick_ups:
+        print("\n".join(char.center(80) for char in
+                        game_images["teddy"].splitlines()))
         slowprint("You take Burt down from the shelf in the closet and grip him \
 tightly in your arms.\n")
     elif "golf_club" in pick_ups:
+        print("\n".join(char.center(80) for char in
+                        game_images["club"].splitlines()))
         slowprint("You nod at Burt, but pull a long golf club from the bag in the \
 back of the closet. The metal feels cold in your hands.\n")
     slowprint(f"You continue down the hallway and pass the master bedroom on your \
@@ -310,6 +320,8 @@ def check_bedroom():
     Optional interaction. Leaves master bedroom door open.
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in
+                    game_images["master"].splitlines()))
     slowprint("Very slowly, you creep across the hall to the door. You press your \
 ear up against it, but can hear nothing from inside. The door knob feels cool \
 on your hand.\n\
@@ -329,6 +341,8 @@ def go_kitchen():
     Choice to use step stool or not
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in
+                    game_images["kettle"].splitlines()))
     slowprint("You continue on towards the kitchen. It is as quiet as the rest \
 of the house. Moonlight filters in through the windows and illuminates the \
 room.\n")
@@ -360,6 +374,8 @@ def get_stool():
     Optional function if user decides to get step stool
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in
+                    game_images["stool"].splitlines()))
     slowprint("You think you remember the stool by the backdoor. You walk past \
 the island in the middle of the kitchen, past the table and find the stool \
 next to the door, beside your wellies.\n\
@@ -423,6 +439,8 @@ def shadow_appears():
     """
     Monster. User can choose to run or do nothing
     """
+    print("\n".join(char.center(80) for char in
+                    game_images["shadow"].splitlines()))
     slowprint("As you watch, the back door slowly creaks open. A shadowy figure forms \
 before your. The hair stands up on the back of your neck as it approaches.\n\
 It seems to glide across the floor without taking a step.\n")
@@ -574,6 +592,8 @@ def front_door():
     If has teddy, runs to bedroom
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in
+                    game_images["front"].splitlines()))
     slowprint(f"You race for the front door, hoping to escape from the house.\
 You pull on the handle. The door won't budge.\n\
 '{username},' whispers the shadowy figure as it approaches.\n\
@@ -729,6 +749,8 @@ def run_window():
     """
     clear_terminal()
     if window_closed:
+        print("\n".join(char.center(80) for char in
+                        game_images["window_closed"].splitlines()))
         if "golf_club" in pick_ups:
             slowprint(f"You run over to the window and try to slide it open, but \
 it's jammed. You can't force it.\n\
@@ -775,6 +797,8 @@ def back_bed():
     Otherwise, dies
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in
+                    game_images["bed"].splitlines()))
     slowprint("You dive into your bed and pull the covers up over your head. You \
 close your eyes and try as hard as you can to fall back to sleep.\n")
     if "teddy" in pick_ups:
@@ -792,6 +816,8 @@ def wake_win():
     """
     Happy ending!
     """
+    print("\n".join(char.center(80) for char in
+                    game_images["teddy"].splitlines()))
     slowprint(f"'{username}, why is there milk all over the kitchen floor?'\n\
 Your eyes open. Light seeps in around your blankets. You throw them back.\n\
 It's morning. Your bedroom is bright and empty. There's no shadowy figures \
