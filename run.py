@@ -51,7 +51,7 @@ def main():
     global username
     username = input("What's your name? \n").strip().capitalize()
     start_answer = input(f"Hello, {username}, do you want to play a game?\
- Yes or No").strip().lower()
+ Yes or No\n").strip().lower()
     if start_answer == "yes":
         print("Great. To play, either enter the letter of your choice or the \
 underlined keyword in the terminal.")
