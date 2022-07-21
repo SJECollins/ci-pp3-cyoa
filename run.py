@@ -415,6 +415,8 @@ def kettle_on():
     Missable text depending on if user got the stool
     """
     clear_terminal()
+    print("\n".join(char.center(80) for char in
+                    game_images["tea"].splitlines()))
     slowprint("You flick the switch on the kettle and the little light above it comes \
 on. It starts a low rumble. While the kettle boils, you collect your \
 ingredients.\n\
@@ -768,6 +770,8 @@ as you can in the corner of the room.\n")
             time.sleep(3)
             user_dies()
     elif not window_closed:
+        print("\n".join(char.center(80) for char in
+                        game_images["window"].splitlines()))
         slowprint(f"You run over to the window. It's still open a crack. You slide \
 it open even wider as you hear your bedroom door slowly open behind you.\n\
 '{username},' the shadow softly growls.\n")
