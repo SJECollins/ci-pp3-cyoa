@@ -207,7 +207,8 @@ hallway as quietly as you can. As you go, on your left you pass the hallway \
 closet.\n")
     while True:
         user_choice = get_user_choice("You feel compelled to:\n\
-A. \033[4mCheck\033[0m inside, though it is as quiet as the rest of the house.\n\
+A. \033[4mCheck\033[0m inside, though it is as quiet as the rest of the house\
+.\n\
 B. Keep \033[4mgoing\033[0m - you don't need to encourage your imagination.")
         if user_choice == "a" or user_choice == "check":
             check_closet()
@@ -232,19 +233,20 @@ As expected, there is only the regular assortment of clutter - coats, shoes, \
 golf clubs, your old teddy bear 'Burt'.\n")
     while True:
         user_choice = get_user_choice("You decide to:\n\
-A. Take Burt with you, you haven't spent much time together lately.\n\
-B. Take a golf club.\n\
-C. Take nothing. You don't know why you decided to open the closet in the \
-first place.")
-        if user_choice == "a":
+A. Take \033[4mBurt\033[0m with you, you haven't spent much time together \
+lately.\n\
+B. Take a golf \033[4mclub\033[0m.\n\
+C. Take \033[4mnothing\033[0m. You don't know why you decided to open the \
+closet in the first place.")
+        if user_choice == "a" or user_choice == "burt":
             pick_ups.append("teddy")
             continue_hallway()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "club":
             pick_ups.append("golf_club")
             continue_hallway()
             break
-        elif user_choice == "c":
+        elif user_choice == "c" or user_choice == "nothing":
             continue_hallway()
             break
         else:
