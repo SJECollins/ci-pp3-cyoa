@@ -56,12 +56,12 @@ def main():
         print("Great. To play, enter the letter of your choice in the terminal\
 .")
         user_choice = get_user_choice("Ready to start?\n\
-A. Yes!\n\
-B. Actually, I don't think I want to play after all...")
-        if user_choice == "a":
+A. \033[4mYes\033[0m!\n\
+B. Actually, \033[4mno\033[0m, I don't think I want to play after all...")
+        if user_choice == "a" or user_choice == "yes":
             clear_terminal()
             start_room()
-        else:
+        elif user_choice == "b" or user_choice == "no":
             print(f"That's too bad, {username}")
     else:
         print(f"Well, alright {username}. Maybe next time...")
