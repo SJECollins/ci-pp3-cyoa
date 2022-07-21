@@ -505,9 +505,8 @@ figure follows, but as you reach the hallway, you glance back and see it \
 stumble over your step stool and fall on the kitchen tiles.\n")
         time.sleep(3)
         global shadow_delayed
-        if not shadow_delayed:
-            shadow_delayed = True
-            run_hallway()
+        shadow_delayed = True
+        run_hallway()
     elif not stool_out:
         run_hallway()
 
