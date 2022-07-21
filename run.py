@@ -78,12 +78,12 @@ def start_room():
 You don't know why, but you feel wide awake and your heart is beating hard.\n")
     while True:
         user_choice = get_user_choice("Will you:\n\
-A. Get up and make a cup of tea.\n\
-B. Try to go back to sleep.")
-        if user_choice == "a":
+A. Get up and make a cup of \033[4mtea\033[0m.\n\
+B. Try to go back to \033[4msleep\033[0m.")
+        if user_choice == "a" or user_choice == "tea":
             get_up()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "sleep":
             try_sleep()
             break
         else:
