@@ -39,7 +39,7 @@ def slowprint(text):
     for letter in text:
         sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.01)
 
 
 def main():
@@ -53,8 +53,8 @@ def main():
     start_answer = get_user_choice(f"Hello, {username}, do you want to play a game?\
  Yes or No")
     if start_answer == "yes":
-        print("Great. To play, enter the letter of your choice in the terminal\
-.")
+        print("Great. To play, either enter the letter of your choice or the \
+underlined keyword in the terminal.")
         user_choice = get_user_choice("Ready to start?\n\
 A. \033[4mYes\033[0m!\n\
 B. Actually, \033[4mno\033[0m, I don't think I want to play after all...")
@@ -495,6 +495,7 @@ you fall! You collapse on the kitchen tiles and the shadow looms over you.\n")
             slowprint("In a panic, you throw Burt at the shadowy figure. It catches \
 him. As it seems to stare at Burt in confusion, you kick your slippers off \
 and run for the hallway.\n")
+            pick_ups.remove("teddy")
             time.sleep(3)
             run_hallway()
         else:
@@ -795,6 +796,8 @@ B. No, I want to \033[4mquit\033[0m.")
             break
         elif user_choice == "b" or user_choice == "quit":
             return
+        else:
+            print(f"{user_choice} isn't an option")
 
 
 main()
