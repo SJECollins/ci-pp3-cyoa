@@ -102,12 +102,12 @@ Very slowly, you peek out from under your covers. In the darkness, you spy the\
  window open a crack. A light breeze is moving the curtains.\n")
     while True:
         user_choice = get_user_choice("It's chilly in your room, so you:\n\
-A. Get up.\n\
-B. Pull the blanket tighter and close your eyes.")
-        if user_choice == "a":
+A. Get \033[4mup\033[0m.\n\
+B. Pull the blanket \033[4mtighter\033[0m and close your eyes.")
+        if user_choice == "a" or user_choice == "up":
             get_up()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "tighter":
             blanket_tighter()
             break
         else:
