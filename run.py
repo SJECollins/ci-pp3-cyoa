@@ -599,12 +599,12 @@ How much longer can you wait?\n\
 You think you can hear a sound coming from the kitchen.")
     while True:
         user_choice = get_user_choice("You decide to:\n\
-A. Run to your bedroom.\n\
-B. Stay hidden.")
-        if user_choice == "a":
+A. \033[4mRun\033[0m to your bedroom.\n\
+B. \033[4mStay\033[0m hidden.")
+        if user_choice == "a" or user_choice == "run":
             hide_bedroom()
             break
-        elif user_choice == "b":
+        elif user_choice == "b" or user_choice == "stay":
             hidden_user_dies()
             break
         else:
