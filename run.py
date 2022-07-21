@@ -45,10 +45,27 @@ def slowprint(text):
 
 def main():
     """
+    Start function.
+    Displays the start screen. Prompts the user to press enter to begin.
+    """
+    title_text = "\nHide & Seek"
+    game_title = pyfiglet.figlet_format(title_text, font="shadow",
+                                        justify="center")
+    print(game_title)
+    subtitle_text = "A choose your own adventure game"
+    subtitle = subtitle_text.center(80)
+    slowprint(subtitle)
+    input("\n\n\nPress Enter to begin.")
+    intro()
+
+
+def intro():
+    """
     Starting function. Updates username. Prompts user to begin story.
     User can choose to say no, which prints a disappointed message and game
     doesn't start
     """
+    clear_terminal()
     global username
     username = input("What's your name? \n").strip().capitalize()
     start_answer = input(f"Hello, {username}, do you want to play a game?\
