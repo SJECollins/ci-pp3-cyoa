@@ -74,10 +74,11 @@ def intro():
  Yes or No\n").strip().lower()
     if start_answer == "yes":
         print("Great. To play, either enter the letter of your choice or the \
-underlined keyword in the terminal.")
-        user_choice = get_user_choice("Ready to start?\n\
+underlined\nkeyword in the terminal.")
+        user_choice = input("Ready to start?\n\
 A. \033[4mYes\033[0m!\n\
-B. Actually, \033[4mno\033[0m, I don't think I want to play after all...")
+B. Actually, \033[4mno\033[0m, I don't think I want to play after all...")\
+            .strip().lower()
         if user_choice == "a" or user_choice == "yes":
             clear_terminal()
             start_room()
@@ -98,9 +99,9 @@ def start_room():
     clear_terminal()
     print("\n".join(char.center(80) for char in
                     game_images["bed"].splitlines()))
-    slowprint("You slowly open your eyes to find yourself safely in your own bed\
-. At first the room seems pitch black, except for the light from the clock on\
- your bedside table. It reads: 02:00.\n\
+    slowprint("You slowly open your eyes to find yourself safely in your own \
+bed. At first the\nroom seems pitch black, except for the light from the \
+clock on your bedside\ntable. It reads: 02:00.\n\
 You don't know why, but you feel wide awake and your heart is beating hard.\n")
     while True:
         user_choice = get_user_choice("Will you:\n\
@@ -121,11 +122,11 @@ def try_sleep():
     Try to go back to sleep. Choice to get up or keep trying to sleep
     """
     clear_terminal()
-    slowprint("You have to get up for school early in the morning. So, you roll \
-over in your bed and pull the covers up over your head. After a few moments \
-of silence, you hear a soft rustling.\n\
-Very slowly, you peek out from under your covers. In the darkness, you spy the\
- window open a crack. A light breeze is moving the curtains.\n")
+    slowprint("You have to get up for school early in the morning. So, you \
+roll over in your\nbed and pull the covers up over your head. After a few \
+moments of silence, you\nhear a soft rustling.\n\
+Very slowly, you peek out from under your covers. In the darkness, you spy \
+the\nwindow open a crack. A light breeze is moving the curtains.\n")
     while True:
         user_choice = get_user_choice("It's chilly in your room, so you:\n\
 A. Get \033[4mup\033[0m.\n\
@@ -149,7 +150,7 @@ def blanket_tighter():
 shut.\n\
 '{username}'\n\
 You think you hear a voice softly calling your name. You're not sure where \
-it's coming from, or even if you really heard it.\n")
+it's\ncoming from, or even if you really heard it.\n")
     while True:
         user_choice = get_user_choice("You decide to:\n\
 A. \033[4mInvestigate\033[0m.\n\
@@ -170,16 +171,16 @@ def sleep_harder():
     """
     clear_terminal()
     slowprint("You really do have to get up early and you've never been a very \
-inquisitive person. You pull the blanket tight around your ears and scrunch \
-your eyes even tighter. As you do, you feel a chill run up the back of your \
-neck and the blanket starts to feel very heavy...\n")
+inquisitive\nperson. You pull the blanket tight around your ears and scrunch \
+your eyes even\ntighter. As you do, you feel a chill run up the back of your \
+neck and the\nblanket starts to feel very heavy...\n")
     time.sleep(3)
     slowprint(f"\n'{username}'\n\
 Who's saying that? You try to open your eyes and peek out from the covers, but\
- your eyelids won't open and the covers are weighing you down...\n")
+\nyour eyelids won't open and the covers are weighing you down...\n")
     time.sleep(3)
     slowprint("\nThe covers press harder and harder and your eyelids squeeze \
-tighter and tighter until all you feel is pressure and all you see is \
+tighter and\ntighter until all you feel is pressure and all you see is \
 nothingness.\n\
 You never wake up again.\n\
 The end!\n")
@@ -195,8 +196,8 @@ def get_up():
     """
     clear_terminal()
     slowprint("Maybe a cup of tea will help you drift off to sleep. You climb\
- out of bed. The window is slightly open, letting a cold breeze into the \
-house. At the end of your bed are an oversized pair of fluffy bunny slippers.\
+ out of bed. The\nwindow is slightly open, letting a cold breeze into the \
+house. At the end of\nyour bed are an oversized pair of fluffy bunny slippers.\
 \n")
     while True:
         user_choice = get_user_choice("You shiver and:\n\
@@ -233,11 +234,11 @@ in your bare feet.\n")
         slowprint("You shiver and slip your slippers on, then shuffle out into \
 the hallway.\n")
     slowprint("The house is still. You cannot hear a sound. You creep along the \
-hallway as quietly as you can. As you go, on your left you pass the hallway \
+hallway as\nquietly as you can. As you go, on your left you pass the hallway \
 closet.\n")
     while True:
         user_choice = get_user_choice("You feel compelled to:\n\
-A. \033[4mCheck\033[0m inside, though it is as quiet as the rest of the house\
+A. \033[4mCheck\033[0m inside, though it's as quiet as the rest of the house\
 .\n\
 B. Keep \033[4mgoing\033[0m - you don't need to encourage your imagination.")
         if user_choice == "a" or user_choice == "check":
@@ -259,16 +260,16 @@ def check_closet():
     print("\n".join(char.center(80) for char in
                     game_images["closet"].splitlines()))
     slowprint("For some reason, you decide to investigate the quiet closet. You \
-try to peek through the slats of the closet door, but see nothing except \
-darkness. Slowly, you open the closet and peer inside.\n\
-As expected, there is only the regular assortment of clutter - coats, shoes, \
+try to peek\nthrough the slats of the closet door, but see nothing except \
+darkness. Slowly,\nyou open the closet and peer inside.\n\
+As expected, there is only the regular assortment of clutter - coats, shoes,\n\
 golf clubs, your old teddy bear 'Burt'.\n")
     while True:
         user_choice = get_user_choice("You decide to:\n\
-A. Take \033[4mBurt\033[0m with you, you haven't spent much time together \
+A. Take \033[4mBurt\033[0m with you, you haven't spent much time together \n\
 lately.\n\
 B. Take a golf \033[4mclub\033[0m.\n\
-C. Take \033[4mnothing\033[0m. You don't know why you decided to open the \
+C. Take \033[4mnothing\033[0m. You don't know why you decided to open the \n\
 closet in the first place.")
         if user_choice == "a" or user_choice == "burt":
             pick_ups.append("teddy")
@@ -294,12 +295,12 @@ def continue_hallway():
         print("\n".join(char.center(80) for char in
                         game_images["teddy"].splitlines()))
         slowprint("You take Burt down from the shelf in the closet and grip him \
-tightly in your arms.\n")
+tightly in your\narms.\n")
     elif "golf_club" in pick_ups:
         print("\n".join(char.center(80) for char in
                         game_images["club"].splitlines()))
         slowprint("You nod at Burt, but pull a long golf club from the bag in the \
-back of the closet. The metal feels cold in your hands.\n")
+back of the\ncloset. The metal feels cold in your hands.\n")
     slowprint(f"You continue down the hallway and pass the master bedroom on your \
 right.\n\
 '{username}'\n\
@@ -328,12 +329,14 @@ def check_bedroom():
     print("\n".join(char.center(80) for char in
                     game_images["master"].splitlines()))
     slowprint("Very slowly, you creep across the hall to the door. You press your \
-ear up against it, but can hear nothing from inside. The door knob feels cool \
-on your hand.\n\
+ear up\nagainst it, but can hear nothing from inside. The door knob feels cool\
+ on your\nhand.\n\
 Gingerly, you turn it. The door creaks as you push it open a crack. Peering \
-in, the room is so dark you can only see the outline of the duvet on the bed. \
+in,\nthe room is so dark you can only see the outline of the duvet on the bed\
+.\n\
 Nothing is stirring in the room. You cannot hear a sound.\n\
-Relieved, you leave the door open a crack and continue towards the kitchen.\n")
+Relieved, you leave the door open a crack and continue towards the kitchen...\
+\n")
     global door_open
     door_open = True
     time.sleep(3)
@@ -349,7 +352,7 @@ def go_kitchen():
     print("\n".join(char.center(80) for char in
                     game_images["kettle"].splitlines()))
     slowprint("You continue on towards the kitchen. It is as quiet as the rest \
-of the house. Moonlight filters in through the windows and illuminates the \
+of the house.\nMoonlight filters in through the windows and illuminates the \
 room.\n")
     if "slippers" not in pick_ups:
         if "teddy" in pick_ups:
@@ -382,12 +385,12 @@ def get_stool():
     print("\n".join(char.center(80) for char in
                     game_images["stool"].splitlines()))
     slowprint("You think you remember the stool by the backdoor. You walk past \
-the island in the middle of the kitchen, past the table and find the stool \
-next to the door, beside your wellies.\n\
-You glance at the door quickly as you retrieve the stool. It looks locked to \
+the island in\nthe middle of the kitchen, past the table and find the stool \
+next to the door,\nbeside your wellies.\n\
+You glance at the door quickly as you retrieve the stool. It looks locked to\n\
 you. Of course it is.\n\
 You bring the stool back over to the counter and step up on it. You can \
-easily pull the kettle out from under the cabinet.\n")
+easily\npull the kettle out from under the cabinet...\n")
     global stool_out
     stool_out = True
     time.sleep(3)
@@ -409,7 +412,7 @@ though.\n")
         pick_ups.remove("golf_club")
         slowprint("So, you place the golf club down to free your hands.\n")
     slowprint("On your toes, leaning on the counter with one hand, you reach out for \
-the kettle. You can just about pull it out from under the cabinet.\n")
+the\nkettle. You can just about pull it out from under the cabinet.\n")
     time.sleep(3)
     kettle_on()
 
@@ -423,17 +426,17 @@ def kettle_on():
     print("\n".join(char.center(80) for char in
                     game_images["tea"].splitlines()))
     slowprint("You flick the switch on the kettle and the little light above it comes \
-on. It starts a low rumble. While the kettle boils, you collect your \
+on. It\nstarts a low rumble. While the kettle boils, you collect your \
 ingredients.\n\
-Your favourite mug is sitting on the edge of the sink where you left it that \
+Your favourite mug is sitting on the edge of the sink where you left it that\n\
 afternoon. You collect it.\n\
-The tea bags and sugar are much easier to reach than the kettle. You place a \
-tea bag in your mug. You take a spoon from the drawer and place it next to \
+The tea bags and sugar are much easier to reach than the kettle. You place a\n\
+tea bag in your mug. You take a spoon from the drawer and place it next to\n\
 your cup.\n")
     time.sleep(3)
     slowprint("You walk over to the fridge to get the milk. You open the door and \
-take out the milk carton. As the fridge door closes, you can see the back door\
-. It is slightly open.\n")
+take out the\nmilk carton. As the fridge door closes, you can see the back \
+door. It is\nslightly open.\n")
     if stool_out:
         slowprint("But, it was just closed?\n")
     else:
@@ -446,10 +449,11 @@ def shadow_appears():
     """
     Monster. User can choose to run or do nothing
     """
+    clear_terminal()
     print("\n".join(char.center(80) for char in
                     game_images["shadow"].splitlines()))
     slowprint("As you watch, the back door slowly creaks open. A shadowy figure forms \
-before you. The hair stands up on the back of your neck as it approaches.\n\
+before\nyou. The hair stands up on the back of your neck as it approaches.\n\
 It seems to glide across the floor without taking a step.\n")
     while True:
         user_choice = get_user_choice("You:\n\
@@ -493,15 +497,15 @@ def kitchen_cry():
     clear_terminal()
     if "teddy" in pick_ups:
         slowprint("You open your mouth, but then in a panic you toss Burt at the \
-figure. The shadow stops and catches him. While it's distracted, you make a \
+figure. The\nshadow stops and catches him. While it's distracted, you make a \
 break for it.\n")
         pick_ups.remove("teddy")
         time.sleep(3)
         run_away()
     elif "golf_club" in pick_ups:
         slowprint("The figure reaches for you. Impulsively, you swing the golf club \
-that is still in your hands. You miss and the shadow continues to advance...\n\
-")
+that is still\nin your hands. You miss and the shadow continues to advance...\
+\n")
         time.sleep(3)
     user_dies()
 
@@ -514,8 +518,8 @@ def user_dies():
 your throat.\n\
 '{username},' the figure groans.\n\
 It reaches for you.\n\
-Your legs quiver. Your feet refuse to listen to you. Your eyes widen but your \
-vision fades. You can feel a weight press down upon you...\n")
+Your legs quiver. Your feet refuse to listen to you. Your eyes widen but your\
+\nvision fades. You can feel a weight press down upon you...\n")
     time.sleep(3)
     slowprint(f"You are overcome with darkness. All you feel and see and hear is \
 nothingness.\n\
@@ -535,12 +539,12 @@ def run_away():
 '{username},' the figure growls.\n")
     if stool_out and "slippers" in pick_ups:
         slowprint("You run through the kitchen and hop over the stool as you go. As \
-you leap, the bunny ears of your fluffy slippers catch on the stool and \
-you fall! You collapse on the kitchen tiles and the shadow looms over you.\n")
+you leap, the\nbunny ears of your fluffy slippers catch on the stool and \
+you fall! You\ncollapse on the kitchen tiles and the shadow looms over you.\n")
         if "teddy" in pick_ups:
             slowprint("In a panic, you throw Burt at the shadowy figure. It catches \
-him. As it seems to stare at Burt in confusion, you kick your slippers off \
-and run for the hallway.\n")
+him. As it seems\nto stare at Burt in confusion, you kick your slippers off \
+and run for the\nhallway.\n")
             pick_ups.remove("teddy")
             time.sleep(3)
             run_hallway()
@@ -548,8 +552,8 @@ and run for the hallway.\n")
             user_dies()
     elif stool_out:
         slowprint("You run through the kitchen, hopping over the stool as you go. The \
-figure follows, but as you reach the hallway, you glance back and see it \
-stumble over your step stool and fall on the kitchen tiles.\n")
+figure\nfollows, but as you reach the hallway, you glance back and see it \
+stumble over\nyour step stool and fall on the kitchen tiles.\n")
         time.sleep(3)
         global shadow_delayed
         shadow_delayed = True
@@ -565,7 +569,7 @@ def run_hallway():
     """
     clear_terminal()
     if not shadow_delayed:
-        slowprint("You reach the hallway, but the shadow is right on your heels. \
+        slowprint("You reach the hallway, but the shadow is right on your heels.\n\
 There's little time.\n")
     elif shadow_delayed:
         slowprint("You reach the hallway before the shadowy figure can gather \
@@ -602,13 +606,13 @@ def front_door():
     print("\n".join(char.center(80) for char in
                     game_images["front"].splitlines()))
     slowprint(f"You race for the front door, hoping to escape from the house.\
- You pull on the handle. The door won't budge.\n\
+ You pull on the\nhandle. The door won't budge.\n\
 '{username},' whispers the shadowy figure as it approaches.\n\
 You fumble with the door and, too late, realise the bolt at the top is \
-locked, out of reach.\n")
+locked,\nout of reach.\n")
     if "teddy" in pick_ups:
         slowprint("In a panic, you throw Burt at the shadowy figure. It catches \
-him. As it seems to stare at Burt in confusion, you run for your bedroom.\n")
+him. As it seems\nto stare at Burt in confusion, you run for your bedroom.\n")
         pick_ups.remove("teddy")
         hide_bedroom()
     else:
@@ -622,8 +626,8 @@ def hide_closet():
     """
     clear_terminal()
     slowprint("You race for the closet, diving through the slatted doors \
-and pulling them closed behind you. Hastily, you cover yourself in a \
-pile of winter coats. You put your hand to your mouth and try to stay \
+and pulling them\nclosed behind you. Hastily, you cover yourself in a \
+pile of winter coats. You\nput your hand to your mouth and try to stay \
 as quiet as you can.\n\
 All you can hear is your own breathing.\n")
     if not shadow_delayed:
@@ -645,7 +649,7 @@ there?\n\
 You think you hear something pass by the door, but did you just imagine \
 that?\n\
 How much longer can you wait?\n\
-You think you can hear a sound coming from the kitchen.")
+You think you can hear a sound coming from the kitchen.\n")
     while True:
         user_choice = get_user_choice("You decide to:\n\
 A. \033[4mRun\033[0m to your bedroom.\n\
@@ -682,8 +686,8 @@ def hide_master():
     if shadow_delayed and door_open:
         slowprint("You slip through the open door.\n\
 Expecting safety, you realise the mound of blankets you saw earlier \
-is just that - blankets. The room is empty. You have no time to wonder \
-why, so you dive underneath the bed.\n")
+is just\nthat - blankets. The room is empty. You have no time to wonder \
+why, so you dive\nunderneath the bed.\n")
         time.sleep(3)
         user_hides()
     elif shadow_delayed and not door_open:
@@ -716,7 +720,7 @@ def hide_bedroom():
     """
     clear_terminal()
     slowprint("You race into your bedroom. As quickly and quietly as you can, \
-you close the door behind you. What now?\n")
+you close the\ndoor behind you. What now?\n")
     while True:
         user_choice = get_user_choice("You:\n\
 A. \033[4mSlide\033[0m under your bed.\n\
@@ -741,7 +745,7 @@ def under_bed():
     """
     clear_terminal()
     slowprint(f"You dive head first under your bed and curl yourself into as \
-small of a ball as you can.\n\
+small of a ball as\nyou can.\n\
 You cover your mouth and try to quiet your breathing.\n\
 '{username}.'\n\
 The bedroom door creaks open slowly.\n")
@@ -760,7 +764,7 @@ def run_window():
                         game_images["window_closed"].splitlines()))
         if "golf_club" in pick_ups:
             slowprint(f"You run over to the window and try to slide it open, but \
-it's jammed. You can't force it.\n\
+it's jammed. You can't\nforce it.\n\
 The golf club! You still have it!\n\
 You can hear the door slowly open behind you.\n\
 '{username},' the shadow softly growls.\n\
@@ -769,16 +773,16 @@ You swing the club...\n")
             escape_house()
         else:
             slowprint("You run over to the window and try to slide it open. It's \
-jammed. Pushing with all your strength, you can't force it open.\n\
+jammed. Pushing with\nall your strength, you can't force it open.\n\
 You turn as the bedroom door slowly opens and try to make yourself as small \
-as you can in the corner of the room...\n")
+as\nyou can in the corner of the room...\n")
             time.sleep(3)
             user_dies()
     elif not window_closed:
         print("\n".join(char.center(80) for char in
                         game_images["window"].splitlines()))
         slowprint(f"You run over to the window. It's still open a crack. You slide \
-it open even wider as you hear your bedroom door slowly open behind you.\n\
+it open even\nwider as you hear your bedroom door slowly open behind you.\n\
 '{username},' the shadow softly growls...\n")
         escape_house()
         play_again()
@@ -790,10 +794,10 @@ def escape_house():
     """
     clear_terminal()
     slowprint("You slip out your bedroom window and run out on to the footpath. \
-Looking back at your house, you think you see the shadow in your window.\n\
+Looking back\nat your house, you think you see the shadow in your window.\n\
 It's quiet out. The road is still. There are no lights in any of the houses.\n\
 Your grandparents live nearby. You go there every Sunday, it's not a very \
-long drive.\n\
+long\ndrive.\n\
 You think you know which way to go. It'll be safe there.\n\
 You start walking.\n\
 The end!\n")
@@ -809,14 +813,14 @@ def back_bed():
     print("\n".join(char.center(80) for char in
                     game_images["bed"].splitlines()))
     slowprint("You dive into your bed and pull the covers up over your head. You \
-close your eyes and try as hard as you can to fall back to sleep.\n")
+close your\neyes and try as hard as you can to fall back to sleep.\n")
     if "teddy" in pick_ups:
         slowprint("You hug Burt close.\n")
         time.sleep(3)
         wake_win()
     else:
         slowprint("You can hear it. The bedroom creaks open. You lift the edge of \
-your blankets and peek out with one eye.\n")
+your blankets\nand peek out with one eye.\n")
         time.sleep(3)
         hidden_user_dies()
 
@@ -829,7 +833,7 @@ def wake_win():
                     game_images["teddy"].splitlines()))
     slowprint(f"'{username}, why is there milk all over the kitchen floor?'\n\
 Your eyes open. Light seeps in around your blankets. You throw them back.\n\
-It's morning. Your bedroom is bright and empty. There's no shadowy figures \
+It's morning. Your bedroom is bright and empty. There's no shadowy figures \n\
 lurking in the corners.\n\
 It must have all been a terrible nightmare.\n\
 You're safe.\n\
