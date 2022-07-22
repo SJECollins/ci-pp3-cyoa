@@ -23,6 +23,8 @@ def get_user_choice(message):
     """
     user_choice = input("\n====================================================\
 ============================\n" + message + "\n").strip().lower()
+    if user_choice == "quit":
+        main()
     return user_choice
 
 
@@ -70,24 +72,25 @@ def intro():
     clear_terminal()
     global username
     username = input("What's your name? \n").strip().capitalize()
-    start_answer = input(f"Hello, {username}, do you want to play a game?\
+    start_answer = input(f"\nHello, {username}, do you want to play a game?\
  Yes or No\n").strip().lower()
     if start_answer == "yes":
-        print("Great. To play, either enter the letter of your choice or the \
-underlined\nkeyword in the terminal.")
+        print("\nGreat. To play, either enter the letter of your choice or the \
+underlined\nkeyword in the terminal.\n\
+Or, you can enter 'quit' to return to the title screen.\n")
         user_choice = input("Ready to start?\n\
 A. \033[4mYes\033[0m!\n\
-B. Actually, \033[4mno\033[0m, I don't think I want to play after all...")\
+B. Actually, \033[4mno\033[0m, I don't think I want to play after all...\n")\
             .strip().lower()
         if user_choice == "a" or user_choice == "yes":
             clear_terminal()
             start_room()
         elif user_choice == "b" or user_choice == "no":
-            print(f"That's too bad, {username}")
+            slowprint(f"\nThat's too bad, {username}")
             time.sleep(2)
             main()
     else:
-        print(f"Well, alright {username}. Maybe next time...")
+        slowprint(f"\nWell, alright {username}. Maybe next time...")
         time.sleep(2)
         main()
 
@@ -862,7 +865,7 @@ B. No, I want to \033[4mquit\033[0m to the title screen.")
         if user_choice == "a" or user_choice == "yes":
             start_room()
             break
-        elif user_choice == "b" or user_choice == "quit":
+        elif user_choice == "b":
             main()
         else:
             print(f"{user_choice} isn't an option")
