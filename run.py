@@ -182,8 +182,10 @@ Who's saying that? You try to open your eyes and peek out from the covers, but\
     slowprint("\nThe covers press harder and harder and your eyelids squeeze \
 tighter and\ntighter until all you feel is pressure and all you see is \
 nothingness.\n\
-You never wake up again.\n\
-The end!\n")
+You never wake up again.\n\n")
+    print(pyfiglet.figlet_format("The End", font="shadow",
+                                 justify="center"))
+    time.sleep(3)
     play_again()
 
 
@@ -524,8 +526,10 @@ Your legs quiver. Your feet refuse to listen to you. Your eyes widen but your\
     slowprint(f"You are overcome with darkness. All you feel and see and hear is \
 nothingness.\n\
 'Goodnight, {username}.'\n\
-You never wake up again.\n\
-The end!\n")
+You never wake up again.\n\n")
+    print(pyfiglet.figlet_format("The End", font="shadow",
+                                 justify="center"))
+    time.sleep(3)
     play_again()
 
 
@@ -799,8 +803,10 @@ It's quiet out. The road is still. There are no lights in any of the houses.\n\
 Your grandparents live nearby. You go there every Sunday, it's not a very \
 long\ndrive.\n\
 You think you know which way to go. It'll be safe there.\n\
-You start walking.\n\
-The end!\n")
+You start walking.\n\n")
+    print(pyfiglet.figlet_format("The End", font="shadow",
+                                 justify="center"))
+    time.sleep(3)
     play_again()
 
 
@@ -837,8 +843,10 @@ It's morning. Your bedroom is bright and empty. There's no shadowy figures \n\
 lurking in the corners.\n\
 It must have all been a terrible nightmare.\n\
 You're safe.\n\
-You look at Burt, still cradled in your arms.\n\
-The end!\n")
+You look at Burt, still cradled in your arms.\n\n")
+    print(pyfiglet.figlet_format("The End", font="shadow",
+                                 justify="center"))
+    time.sleep(3)
     play_again()
 
 
