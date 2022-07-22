@@ -83,8 +83,12 @@ B. Actually, \033[4mno\033[0m, I don't think I want to play after all...")
             start_room()
         elif user_choice == "b" or user_choice == "no":
             print(f"That's too bad, {username}")
+            time.sleep(2)
+            main()
     else:
         print(f"Well, alright {username}. Maybe next time...")
+        time.sleep(2)
+        main()
 
 
 def start_room():
