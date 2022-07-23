@@ -1,6 +1,6 @@
 # Hide & Seek
 
-Hide & Seek is a choose your own adventure game. It is targeted at users who would like to play an interactive story where their decisions will influence how the game story plays out.
+Hide & Seek is a horror-themed, choose your own adventure game. It is targeted at users who would like to play an interactive story where their decisions will influence how the game story plays out.
 
 Created with Python, Hide & Seek is inspired by classic adventure games where the user interacts with the game by entering commands. And like a classic choose your own adventure story, the choices the user makes when prompted effect the outcome of the game. There are multiple different endings decided by the choices made throughout the game.
 
@@ -54,13 +54,51 @@ These decisions that the user makes during the story will effect how the story p
 
 The end screen features when the user reaches one of the endings of the story. "The End" is displayed in ASCII using pyfiglet. After a brief pause the user is then presented with an option to play again - which brings them back to the starting room - or to quit to the title screen.
 
+## Future Expansion
+
 # Design
 
 The game was inspired by classic text adventure games and choose your own adventure books. It is told in a second-person narrative to immerse the player as they are the main character in the story. There is limited ASCII art to illustrate the story and a slow printing effect for the story text.
 
+## Story
+
+Hide & Seek is a small horror game. The story design is inspired by classic choose your own adventure books. The user moves one way through the story and is prompted to make decisions at important branches. These decisions alter variables or call different functions within the code which changes how the story plays out. It is not possible to see the entire story in one play through. 
+
+Unlike some text adventure games, a user cannot go back and revisit a decision, they have to continue with the decisions they have made until the story ends. For example, if they chose to pick up one object rather than another, they can't go back and change their mind. To find all the endings or to see alternative routes through the story, the game has to be played multiple times. 
+
+The design is also loosely inspired by the games designed by Roberta Williams and others from that era. Classic Sierra games are often criticised for being "unfair" as the user could easily miss an important pick up or make an incorrect decision without realising it as they weren't always given the information they needed to know or told what they needed to do. The user was expected to fail and try again until they figured out what game wanted from them. 
+
+While it can be frustrating to lose based on what seems like arbitrary decisions, I felt as though this logic behind the game design worked quite well in a horror game. On first playthrough, the user doesn't know what will happen and so can only make decisions arbitrarily based on minimal information and then watch how it plays out. Hopefully, the user will feel this is a challenge and be inspired to play again and make different, more informed decisions upon completing the game for the first time.
+
+## Graphics
+![ASCII Art](readme-docs/graphics.webp)
+
+The game is limited graphically as it is designed to be played in the terminal. However, to provide a slightly better user experience some ASCII art has been implemented.
+
+Images.py contains a dictionary of ASCII art which is printed to the terminal where appropriate to illustrate the game. Using pyfiglet, the title on the title screen and "the end" at the end of the game are also printed using an ASCII shadow "font".
+
+## Slowprint
+![Slowprint](readme-docs/window.webp)
+
+A slowprint function was used to create an effect where it appeared as through the story was being printed to the terminal as the user read it. This is to try to add a little more immersion to the story. It also serves to give the user time to read the text on screen before the input prompt appears. 
+
+Before the slowprint function, time.sleep() was used instead to delay progression of the story where necessary. However, the effect was such that text appeared quite abruptly and the screen felt very static while the user read the story. 
+
+Using a combination of slowprint and time.sleep(), where necessary, the flow of the story was improved.
 
 # Technologies Used
 
+- [HTML5](https://en.wikipedia.org/wiki/HTML5): mark-up language.
+- [CSS3](https://en.wikipedia.org/wiki/CSS): styling.
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language)): programming language.
+  - Libraries:
+    - Pyfiglet: to create ASCII titles.
+    - OS: for the clear terminal function.
+    - Time: for time.sleep().
+- [GIT](https://git-scm.com): for version control.
+- [GitHub](https://github.com): for host repository.
+- [Gitpod](https://www.gitpod.io): online IDE.
+- [Inkscape](https://inkscape.org): to create the favicon.
 
 # Testing
 
