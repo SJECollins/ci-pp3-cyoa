@@ -86,6 +86,13 @@ Before the slowprint function, time.sleep() was used instead to delay progressio
 
 Using a combination of slowprint and time.sleep(), where necessary, the flow of the story was improved.
 
+## Flowchart
+<details>
+<summary>Game Flowchart</summary>
+
+![Flowchart](readme-docs/game-diagram.png)
+</details>
+
 # Technologies Used
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5): mark-up language.
@@ -99,6 +106,7 @@ Using a combination of slowprint and time.sleep(), where necessary, the flow of 
 - [GitHub](https://github.com): for host repository.
 - [Gitpod](https://www.gitpod.io): online IDE.
 - [Inkscape](https://inkscape.org): to create the favicon.
+- [Diagrams.net](https://www.diagrams.net/)
 
 # Testing
 
@@ -138,3 +146,10 @@ The live site can be found here: [Hide & Seek](https://ci-pp3-hide-and-seek.hero
 - Press enter to create the clone.
 
 # Credits
+
+- The code to take and format the user input was adapted from a conversation with my mentor.
+- The code to clear the terminal is based on [this article from Geeks for Geeks](https://www.geeksforgeeks.org/clear-screen-python/)
+- The code for the slowprint function is from [this Replit page](https://replit.com/talk/learn/The-Slow-Print/44741)
+- The background image for the page is by [Brett Sayles on Pexels.com](https://www.pexels.com/photo/photo-of-a-full-moon-3910141/)
+
+# Acknowledgements
