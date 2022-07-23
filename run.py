@@ -550,7 +550,6 @@ def run_away():
     User chooses to run away. If took stool out, can delay shadow
     If has slippers on and stool out, can die unless has teddy
     """
-    clear_terminal()
     slowprint(f"You turn and run.\n\
 '{username},' the figure growls.\n")
     if stool_out and "slippers" in pick_ups:
