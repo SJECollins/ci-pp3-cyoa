@@ -70,6 +70,15 @@ def intro():
     doesn't start
     """
     clear_terminal()
+    pick_ups.clear()
+    global window_closed
+    window_closed = False
+    global door_open
+    door_open = False
+    global stool_out
+    stool_out = False
+    global shadow_delayed
+    shadow_delayed = False
     global username
     username = input("What's your name? \n").strip().capitalize()
     start_answer = input(f"\nHello, {username}, do you want to play a game?\
