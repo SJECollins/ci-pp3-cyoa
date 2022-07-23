@@ -43,7 +43,7 @@ def slowprint(text):
     for letter in text:
         sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.01)
 
 
 def main():
@@ -70,15 +70,6 @@ def intro():
     doesn't start
     """
     clear_terminal()
-    pick_ups.clear()
-    global window_closed
-    window_closed = False
-    global door_open
-    door_open = False
-    global stool_out
-    stool_out = False
-    global shadow_delayed
-    shadow_delayed = False
     global username
     username = input("What's your name? \n").strip().capitalize()
     start_answer = input(f"\nHello, {username}, do you want to play a game?\
@@ -108,6 +99,15 @@ def start_room():
     """
     Starting room. Choice to get up or go back to sleep
     """
+    pick_ups.clear()
+    global window_closed
+    window_closed = False
+    global door_open
+    door_open = False
+    global stool_out
+    stool_out = False
+    global shadow_delayed
+    shadow_delayed = False
     clear_terminal()
     print("\n".join(char.center(80) for char in
                     game_images["bed"].splitlines()))
@@ -846,6 +846,7 @@ def wake_win():
     """
     Happy ending!
     """
+    clear_terminal()
     print("\n".join(char.center(80) for char in
                     game_images["teddy"].splitlines()))
     slowprint(f"'{username}, why is there milk all over the kitchen floor?'\n\
