@@ -67,5 +67,36 @@ The game was inspired by classic text adventure games and choose your own advent
 
 # Deployment
 
+## Steps to deploy site using Heroku:
+- On the Heroku dashboard, select "New" and click "Create new app"
+  - Create a unique app name
+  - Select your region
+  - Click "Create app"
+- Go to the settings tab:
+  - Scroll down to the config vars section and select "Reveal Config Vars"
+  - Add necessary config vars
+  - In this case, in the key field enter "PORT" and the value field enter "8000"
+  - Click "Add"
+  - Scroll down to Buildpacks and click "Add buildpack"
+  - Add the necessary buildpacks.
+  - In this case, select "python" and click "Save changes"
+  - Then, select "node.js" and click "Save changes"
+- Go to the Deploy tab:
+  - Select GitHub and confirm connection to GitHub account
+  - Search for the repository and click "Connect"
+  - Scroll down to the deploy options
+  - Select automatic deploys if you would like automatic deployment with each new push to the GitHub repository
+  - In manual deploy, select which branch to deploy and click "Deploy Branch"
+  - Heroku will start building the app
+- The link to the app can be found at the top of the page by clicking "Open app"
+
+The live site can be found here: [Hide & Seek](https://ci-pp3-hide-and-seek.herokuapp.com/)
+
+## Steps to clone site:
+- In the GitHub repository, click the "Code" button.
+- Select "HTTPS" and copy the URL.
+- Open Git Bash and navigate to the repository where you would like to locate the cloned repository.
+- Type "git clone" followed by the copied URL.
+- Press enter to create the clone.
 
 # Credits
