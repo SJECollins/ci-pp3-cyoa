@@ -56,9 +56,15 @@ The end screen features when the user reaches one of the endings of the story. "
 
 ## Future Expansion
 
+1. __Additional Stories__. Similarly to my PP2 where the idea of a game was expanded into a small "arcade" site containing multiple games, this app could be expanded into a "library" of choose your own adventure stories with a main screen offering the user a list of stories to choose from.
+2. __Save Game__. Save and load functionality so a user can save and restart as suits them. However, the game is quite short at the moment and this functionality would also allow "Save Scumming" so there would be less risk associated with each decision a user makes.
+3. __Additional/Improved Graphics__. The current ASCII graphics in the game are quite limited as they were mainly included as an example of using a dictionary to store multiline strings and then printing from them.
+
 # Design
 
 The game was inspired by classic text adventure games and choose your own adventure books. It is told in a second-person narrative to immerse the player as they are the main character in the story. There is limited ASCII art to illustrate the story and a slow printing effect for the story text.
+
+The game is written as a series of functions which include the choices, changes to global variables and call the next function depending on input. However, there are a lot of examples online of text adventures that use dictionaries to store the details of rooms and a series of if/else statements. This was considered, however, in this case the user does not have freedom to move back and forth between rooms or revisit previously made decisions.
 
 ## Story
 
@@ -110,6 +116,59 @@ Using a combination of slowprint and time.sleep(), where necessary, the flow of 
 
 # Testing
 
+## [PEP8 online check](http://pep8online.com/)
+- run.py:
+  - ![run.py results](readme-docs/pep8-run.webp)
+- images.py:
+  - ![images.py results](readme-docs/pep8-images.webp)
+
+## HTML and CSS Validation
+Though the HTML and CSS was only slightly altered from the template for the project, testing was included for completeness.
+- [HTML Validator](https://validator.w3.org/)
+  - ![HTML Results](readme-docs/html-validation.webp)
+  - [Link to HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-pp3-hide-and-seek.herokuapp.com%2F)
+
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
+  - ![CSS Results](readme-docs/css-validation.webp)
+  - <p>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+      </a>
+    </p>
+
+## Lighthouse
+Also for completeness, the site was tested with Lighthouse. This was primarily to judge performance, best practices and SEO. The use of jQuery was flagged for security issues under best practices. The result for accessibility cannot be considered a true result for the app.
+![Lighthouse Results](readme-docs/lighthouse.webp)
+
+## Browser Compatibility
+The website was tested on:
+- Chrome Version 101.0.4951.67
+- Firefox Version 101.0.4951.67
+- Edge Version 101.0.1210.53
+- Safari Version 14.1
+
+The website was not designed for mobile devices.
+
+## Testing Functionality
+
+The game was tested throughout production when each new function was created. Following deployment, the game was replayed multiple times through the different decisions to ensure it functioned correctly.
+
+![Testing](readme-docs/hide-and-seek-testing.webp)
+
+## Fixed Bugs
+- On initial deployment, the game did not run because pyfiglet was not included in requirements.txt
+  - "pyfiglet==0.8.post1" was included in requirements.txt and the app deployed again and then ran correctly.
+- On intial deployment, the game always called the wake_win function on going back to bed if the user picked up the teddy, fell over the stool and went back to their bedroom.
+  - The teddy was not removed from the pick_ups list when the user fell over the stool. pick_ups.remove("teddy") was added to correct.
+- Background image for the website was not displaying when added.
+  - Heroku does not display images when linked normally. Changed link to GitHub file and now displays correctly.
+
+## Known Bugs
+
+- The app does not work on mobile devices. 
+  - It was not designed to work on mobile devices as it is not a requirement for the project. As of yet, I have not come across a way to make it function on my iPhone.
 
 # Deployment
 
@@ -150,6 +209,8 @@ The live site can be found here: [Hide & Seek](https://ci-pp3-hide-and-seek.hero
 - The code to take and format the user input was adapted from a conversation with my mentor.
 - The code to clear the terminal is based on [this article from Geeks for Geeks](https://www.geeksforgeeks.org/clear-screen-python/)
 - The code for the slowprint function is from [this Replit page](https://replit.com/talk/learn/The-Slow-Print/44741)
+- The code for centering the ASCII art printed from the dictionary comes from [this Stack Overflow thread](https://stackoverflow.com/questions/51606897/ascii-characters-text-align)
 - The background image for the page is by [Brett Sayles on Pexels.com](https://www.pexels.com/photo/photo-of-a-full-moon-3910141/)
 
 # Acknowledgements
+I'd like to thank my mentor, Brian Macharia, for providing excellent advice and feedback during this project.
