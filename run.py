@@ -52,8 +52,7 @@ def main():
     Displays the start screen. Prompts the user to press enter to begin.
     """
     clear_terminal()
-    title_text = "\nHide & Seek"
-    game_title = pyfiglet.figlet_format(title_text, font="shadow",
+    game_title = pyfiglet.figlet_format("\nHide & Seek", font="shadow",
                                         justify="center")
     print(game_title)
     subtitle_text = "A choose your own adventure game"
