@@ -43,7 +43,7 @@ def slowprint(text):
     for letter in text:
         sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.1)
 
 
 def main():
