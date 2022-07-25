@@ -21,8 +21,9 @@ The live site can be found here: [Hide & Seek](https://ci-pp3-hide-and-seek.hero
 ## User Story
 
 As a user,
-- I would like to understand how to interact with the game and have options for how I interact with the game
-- I would like to be able to make decisions within the game that effect outcome and provide replayability
+- I would like to understand how to interact with the game
+- I would like to be able to make decisions within the game that change the story
+- I would like the options I have to be clearly presented to me
 - I would like to be able to replay the game when I reach an ending
 
 # Features
@@ -156,6 +157,26 @@ The website was not designed for mobile devices.
 The game was tested throughout production when each new function was created. Following deployment, the game was replayed multiple times through the different decisions to ensure it functioned correctly.
 
 ![Testing](readme-docs/hide-and-seek-testing.webp)
+
+## Testing User Stories
+
+- "As a user, I would like to understand how to interact with the game"
+  - The title screen features a prompt to press enter to begin. This is the user's first introduction to the core mechanic.
+  - On the the introduction screen, the user is first asked to enter their name. Their input is then trimmed, capitalised an returned to them in the second prompt. This indicates to the user that their inputs are being taken in and used by the program.
+  - The second prompt explains the mechanics and features a simple yes or no question, and the user is provided a different response depending on how they answer which shows them that their input does effect how the program behaves.
+  - The third prompt gives the user an option to respond either with a letter or keyword as they will be doing during the game.
+  - All these prompts are very basic and subtle ways to introduce the user to the gameplay featured throughout. They are intended to be simple enough for users who aren't familiar with classic adventure games to have basic understanding of how to play.
+- "As a user, I would like to be able to make decisions within the game that change the story"
+  - The core gameplay mechanic is prompting the user to make a decision that effects the course of the story.
+  - There are 15 separate decisions within the story. Not all decisions are present in every playthrough of the story. The user can reach an end screen in as few as 3 prompts.
+  - Also, there is some flavour text within the story that depends on the choice a user makes but does not effect the outcome of the game. For example, if the user collects Burt but not the slippers, there is a line of text upon reaching the kitchen that says the player hugs Burt when they walk on the cold tiles. This is different depending on if they don't have Burt or are wearing slippers.
+- "As a user, I would like the options I have to be clearly presented to me
+  - The prompts for the user are separated from the story by a line of "=" and without slowprint to differentiate them from the narrative.
+  - The prompts are presented in an alphabetized list. Late in development the format was changed from "A." to "[A]" to further highlight the letter as an option.
+  - The keywords are underlined. There is no underlined text in the narrative of the game.
+  - The options are prefaced with text such as "You will:" or "You feel compelled to:" before the list to further indicate the user has to make a choice. 
+- "As a user, I would like to be able to replay the game if I want when I reach an ending"
+  - The play_again function is called after a brief pause. It gives the user an option to replay, which will bypass the title screen and bring them back to the first room so they can quickly replay and try another path.
 
 ## Fixed Bugs
 - On initial deployment, the game did not run because pyfiglet was not included in requirements.txt
