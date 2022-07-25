@@ -96,7 +96,7 @@ Using a combination of slowprint and time.sleep(), where necessary, the flow of 
 <details>
 <summary>Game Flowchart</summary>
 
-![Flowchart](readme-docs/game-diagram.png)
+![Flowchart](readme-docs/game-diagram.webp)
 </details>
 
 # Technologies Used
