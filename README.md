@@ -188,8 +188,7 @@ The game was tested throughout production when each new function was created. Fo
 
 ## Known Bugs
 
-- The app does not work on mobile devices. 
-  - It was not designed to work on mobile devices as it is not a requirement for the project. As of yet, I have not come across a way to make it function on my iPhone.
+- The app does not work on mobile devices at this time. 
 
 # Deployment
 
