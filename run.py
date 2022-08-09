@@ -8,9 +8,7 @@ import pyfiglet
 from images import game_images
 
 
-"""
-Variables and objects
-"""
+# Variables and objects
 username = ""
 pick_ups = []
 window_closed = False
@@ -22,6 +20,13 @@ shadow_delayed = False
 def get_user_choice(message):
     """
     Function to take input from user and format
+
+    Args:
+        message: str - message to print to screen requesting user input
+
+    Returns:
+        str - user's input, converted to lowercase and stripped of spaces
+
     """
     user_choice = input("\n====================================================\
 ============================\n" + message + "\n").strip().lower()
@@ -39,8 +44,12 @@ def clear_terminal():
 
 def slowprint(text):
     """
-    Prints text with delay between letters.
-    Code from replit, link in credits in readme.
+    Function to slowly print to terminal
+
+    Args:
+        text - story text to print to screen with delay between letters
+
+    Code from replit, link in credits in readme
     """
     for letter in text:
         sys.stdout.write(letter)
@@ -51,7 +60,11 @@ def slowprint(text):
 def draw_image(title):
     """
     Print image function
-    Draws images from image dictionary in images.py
+
+    Args:
+        title: str - title of image to print to screen
+
+    Draws images, centered, from image dictionary in images.py
     Code from stack overflow, link in credits in readme
     """
     lines = game_images[title].splitlines()
@@ -83,6 +96,8 @@ def intro():
     clear_terminal()
     global username
     username = input("What's your name? \n").strip().capitalize()
+    if not username:
+        username = "Stranger"
     while True:
         start_answer = input(f"\nHello, {username}, do you want to play a "
                              "game? Yes or No\n").strip().lower()
@@ -106,9 +121,12 @@ def intro():
                     time.sleep(1)
                     clear_terminal()
                     main()
+                elif user_choice == "quit":
+                    clear_terminal()
+                    main()
                 else:
                     print("That's isn't an option...")
-        elif start_answer == "no":
+        elif start_answer == "no" or user_choice == "quit":
             slowprint(f"\nWell, alright {username}. Maybe next time...")
             time.sleep(1)
             clear_terminal()
@@ -225,8 +243,7 @@ def sleep_harder():
               "tighter and\ntighter until all you feel is pressure and all you"
               " see is nothingness.\n"
               "You never wake up again.\n\n")
-    print(pyfiglet.figlet_format("The End", font="shadow",
-                                 justify="center"))
+    print(pyfiglet.figlet_format("The End", font="shadow", justify="center"))
     play_again()
 
 
@@ -574,8 +591,7 @@ def user_dies():
               "is nothingness.\n"
               f"'Goodnight, {username}.'\n"
               "You never wake up again.\n\n")
-    print(pyfiglet.figlet_format("The End", font="shadow",
-                                 justify="center"))
+    print(pyfiglet.figlet_format("The End", font="shadow", justify="center"))
     play_again()
 
 
@@ -862,8 +878,7 @@ def escape_house():
               "not a very long\ndrive.\n"
               "You think you know which way to go. It'll be safe there.\n"
               "You start walking.\n\n")
-    print(pyfiglet.figlet_format("The End", font="shadow",
-                                 justify="center"))
+    print(pyfiglet.figlet_format("The End", font="shadow", justify="center"))
     play_again()
 
 
@@ -902,8 +917,7 @@ def wake_win():
               "It must have all been a terrible nightmare.\n"
               "You're safe.\n"
               "You look at Burt, still cradled in your arms.\n\n")
-    print(pyfiglet.figlet_format("The End", font="shadow",
-                                 justify="center"))
+    print(pyfiglet.figlet_format("The End", font="shadow", justify="center"))
     play_again()
 
 
