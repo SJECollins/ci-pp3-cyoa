@@ -106,7 +106,8 @@ def intro():
                   "When given a choice, either type the letter of your choice"
                   " or the underlined\nkeyword in the terminal and press "
                   "enter.\n"
-                  "Or, you can enter 'quit' to return to the title screen.")
+                  "Or, you can enter 'quit' to return to the title screen at "
+                  "any time.")
             while True:
                 user_choice = input("\nReady to start?\n"
                                     "[A] \033[4mYes\033[0m!\n"
