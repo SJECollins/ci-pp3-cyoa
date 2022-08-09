@@ -41,12 +41,12 @@ The introduction screen gives the user three prompts. The first is a prompt to e
 
 The game then gives a second prompt, including the username to provide feedback to the user that their input is recorded. This second prompt asks a simple yes/no question to encourage the user to type a response. If the user agrees to play the game, they are given simple instructions to input either the letter a prompt or underlined keywords.
 
-The third prompt asks if they are ready to start. It has the typical layout for prompts featured in the game. At this point, it is expected the user understands how to interact with the game.
+The third prompt asks if they are ready to start. It has the typical layout for prompts featured in the game including a letter option and underlined keyword. At this point, it is expected the user understands how to interact with the game.
 
 ## User Interaction
 ![User Choices](readme-docs/choices.webp)
 
-Throughout the game, the user is prompted to make decisions. They are typically prompted with two options, but there can be as many as four. Also, as explained in the introduction, the user can enter "quit" at any point to return to the title screen even though it is not typically presented as an option.
+Throughout the game, the user is prompted to make decisions by entering either the letter or keyword of their decision. They are typically prompted with two options, but there can be as many as four. Also, as explained in the introduction, the user can enter "quit" at any point to return to the title screen even though it is not typically presented as an option.
 
 These decisions that the user makes during the story will effect how the story plays out and the overall outcome.
 
