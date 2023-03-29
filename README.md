@@ -4,8 +4,6 @@ Hide & Seek is a horror-themed, choose your own adventure game. It is targeted a
 
 Created with Python, Hide & Seek is inspired by classic adventure games where the user interacts with the game by entering commands. And like a classic choose your own adventure story, the choices the user makes when prompted effect the outcome of the game. There are multiple different endings decided by the choices made throughout the game.
 
-The live site can be found here: [Hide & Seek](https://ci-pp3-hide-and-seek.herokuapp.com/)
-
 # Table of Contents
 
 - [User Experience](https://github.com/SJECollins/ci-pp3-hide-and-seek#user-experience)
